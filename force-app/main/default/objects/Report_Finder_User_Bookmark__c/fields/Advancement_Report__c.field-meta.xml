@@ -4,7 +4,8 @@
     <externalId>false</externalId>
     <label>Advancement Report</label>
     <referenceTo>Advancement_Report__c</referenceTo>
-    <relationshipName>Advancement_Report_Bookmarks</relationshipName>
+    <relationshipLabel>Report Finder User Bookmarks</relationshipLabel>
+    <relationshipName>Report_Finder_User_Bookmarks</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackTrending>false</trackTrending>

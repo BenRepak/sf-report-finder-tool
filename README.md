@@ -15,7 +15,6 @@ cd sf-report-finder-tool
 3. Create a scratch org and set an alias: 
 ```
 sfdx force:org:create -s -f config/project-scratch-def.json -a report-finder
-
 ```
 4. Push source code to the scratch org:
 ```
@@ -28,7 +27,6 @@ sfdx force:user:permset:assign -n Advancement_Report_Finder_App_Manager
 6. Import sample data to the Advancement_Report__c, Report_Finder_Job_Function__c, and Report_Finder_Job_Function_Filter__c objects:
 ```
 sfdx force:data:tree:import -p ./data/Sample_Data_Import_Plan.json
-
 ```
 7. Open the org and launch the Sales app:
 ```

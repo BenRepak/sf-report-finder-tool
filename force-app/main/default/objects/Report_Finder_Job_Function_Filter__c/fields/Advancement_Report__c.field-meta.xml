@@ -4,7 +4,8 @@
     <externalId>false</externalId>
     <label>Advancement Report</label>
     <referenceTo>Advancement_Report__c</referenceTo>
-    <relationshipName>Adv_Report_Role_Filter</relationshipName>
+    <relationshipLabel>Report Finder Job Function Filters</relationshipLabel>
+    <relationshipName>Report_Finder_Job_Function_Filter</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackHistory>false</trackHistory>

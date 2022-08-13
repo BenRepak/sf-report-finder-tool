@@ -1,0 +1,36 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Report_Finder_Job_Function__c",
+                "referenceId": "Report_Finder_Job_Function__cRef1"
+            },
+            "Job_Function_Description__c": null,
+            "Job_Function_Name__c": "Prospect Research"
+        },
+        {
+            "attributes": {
+                "type": "Report_Finder_Job_Function__c",
+                "referenceId": "Report_Finder_Job_Function__cRef2"
+            },
+            "Job_Function_Description__c": null,
+            "Job_Function_Name__c": "Alumni Specialist"
+        },
+        {
+            "attributes": {
+                "type": "Report_Finder_Job_Function__c",
+                "referenceId": "Report_Finder_Job_Function__cRef3"
+            },
+            "Job_Function_Description__c": null,
+            "Job_Function_Name__c": "Fundraiser"
+        },
+        {
+            "attributes": {
+                "type": "Report_Finder_Job_Function__c",
+                "referenceId": "Report_Finder_Job_Function__cRef4"
+            },
+            "Job_Function_Description__c": null,
+            "Job_Function_Name__c": "Gift Processor"
+        }
+    ]
+}

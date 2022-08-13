@@ -1,18 +1,36 @@
-# Salesforce DX Project: Next Steps
+# Report Finder Tool
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A tool to help filter for useful reports within the Advancement office. 
 
-## How Do You Plan to Deploy Your Changes?
+## Installation Instructions
+1. Authenticate with dev hub:
+```
+sfdx auth:web:login -d -a myhuborg
+```
+2. Clone this repo:
+```
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+```
+3. Create a scratch org and set an alias: 
+```
+sfdx force:org:create -s -f config/project-scratch-def.json -a report-finder
 
-## Configure Your Salesforce DX Project
+```
+4. Push source code to the scratch org:
+```
+sfdx force:source:push
+```
+5. Assign the app manager permission set to the default user:
+```
+sfdx force:user:permset:assign -n Advancement_Report_Finder_App_Manager
+```
+6. Import sample data to the Advancement_Report__c, Report_Finder_Job_Function__c, and Report_Finder_Job_Function_Filter__c objects:
+```
+sfdx force:data:tree:import -p ./data/Sample_Data_Import_Plan.json
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+```
+7. Open the org and launch the Sales app:
+```
+sfdx force:org:open
+```
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)

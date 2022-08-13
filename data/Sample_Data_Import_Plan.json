@@ -1,0 +1,26 @@
+[
+    {
+        "sobject": "Advancement_Report__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Advancement_Report__cs.json"
+        ]
+    },
+    {
+        "sobject": "Report_Finder_Job_Function__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Report_Finder_Job_Function__cs.json"
+        ]
+    },
+    {
+        "sobject": "Report_Finder_Job_Function_Filter__c",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "Report_Finder_Job_Function_Filter__cs.json"
+        ]
+    }
+]

@@ -17,6 +17,10 @@ export default class ReportFinderPaginator extends LightningElement {
         handleNext() {
             this.dispatchEvent(new CustomEvent('next'));
         }
+
+        get itemOrItems(){
+            return this.totalItemCount === 1 ? 'item' : 'items';
+        }
     
         get currentPageNumber() {
             return this.totalItemCount === 0 ? 0 : this.pageNumber;

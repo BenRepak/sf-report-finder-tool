@@ -59,4 +59,19 @@ export default class ReportFinderContainer extends LightningElement {
         
     }
 
+
+    handlePreviousPage() {
+        this.pageNumber = this.pageNumber - 1;
+        this.updateReports();
+
+
+    }
+
+    handleNextPage() {
+        this.pageNumber = this.pageNumber + 1;
+        this.updateReports();
+
+
+    }
+
 }

@@ -10,6 +10,13 @@
                             </c-report-finder-list-item>
                         </template>
                 </div>
+                <c-report-finder-paginator
+                page-number={pageNumber}
+                page-size={reports.pageSize}
+                total-item-count={reports.totalItemCount}
+                onprevious={handlePreviousPage}
+                onnext={handleNextPage}
+            ></c-report-finder-paginator>
 
             </template>
             <template if:false={reports.records.length}>

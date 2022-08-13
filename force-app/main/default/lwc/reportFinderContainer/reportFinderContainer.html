@@ -4,7 +4,8 @@
             <c-report-finder-filters onfiltered={filteredEvent}></c-report-finder-filters>
         </div>
         <div class="slds-col slds-size_9-of-12">
-            <c-report-finder-list reports={reports} onreportselected={selectedEvent}></c-report-finder-list>
+            <c-report-finder-list reports={reports} onreportselected={selectedEvent} onprevious={handlePreviousPage}
+                onnext={handleNextPage}></c-report-finder-list>
         </div>
         <div>
             <c-report-finder-selected-item-modal report={selectedReport}></c-report-finder-selected-item-modal>

@@ -6,6 +6,15 @@ export default class ReportFinderList extends LightningElement {
     @api
     reports;
 
+     /** Current page in the product list. */
+     pageNumber = 1;
+
+     /** The number of items on a page. */
+     pageSize;
+ 
+     /** The total number of items matching the selection. */
+     totalItemCount = 0;
+
     message = 'There are no reports matching your search criteria.'
 
     /** Url for UU logo. */
@@ -21,4 +30,16 @@ export default class ReportFinderList extends LightningElement {
         this.dispatchEvent(selectedReportEvent);
         console.log('dispatched2');
      }
+
+     handlePreviousPage() {
+        this.pageNumber = this.pageNumber - 1;
+        this.dispatchEvent(new CustomEvent('previous',{detail: this.pageNumber}));
+
+    }
+
+    handleNextPage() {
+        this.pageNumber = this.pageNumber + 1;
+        this.dispatchEvent(new CustomEvent('next',{detail: this.pageNumber}));
+
+    }
 }

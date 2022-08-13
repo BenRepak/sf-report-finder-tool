@@ -91,6 +91,11 @@ public with sharing class ReportFinderController {
             whereClause + 
             ' WITH SECURITY_ENFORCED' +
             ' ORDER BY Name LIMIT :pageSize OFFSET :offset';
+
+            result.totalItemCount = Database.countQuery('SELECT count() FROM Advancement_Report__c ' + whereClause);
+
+
+        
         
 
         for(Advancement_Report__c advRep : Database.query(queryString)){
@@ -109,8 +114,6 @@ public with sharing class ReportFinderController {
         }
 
         result.records = reports;
-
-        result.totalItemCount = result.records.size();
 
         return result;
 

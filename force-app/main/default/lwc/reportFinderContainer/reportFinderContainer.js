@@ -43,28 +43,22 @@ export default class ReportFinderContainer extends LightningElement {
               // console.log('update result --> ' + JSON.stringify(result));
               this.reports = result;
               this.error = undefined;
-
-              
               console.log('refreshReports');
-
-              if(this.selectedReport !== undefined){
-                console.log('entered');
-
-                console.log('selectedReport --> ' + JSON.stringify(this.selectedReport));
-
-
-                let selectedReportUpdated = this.reports.records.find(r => r.id === this.selectedReport.id);
-                console.log('SHOW ID this.selectedReport.id -->' + JSON.stringify(this.selectedReport.id));
-                console.log('SHOW ID selectedReportUpdated.id -->' + JSON.stringify(selectedReportUpdated.id));
-
-                console.log('SHOW REPORT selectedReportUpdated -->' + JSON.stringify(selectedReportUpdated));
-                console.log('SHOW REPORT  this.selectedReport after2 -->' + JSON.stringify(this.selectedReport));
-
-
-                this.selectedReport = selectedReportUpdated;
-              }
+            //   if(this.selectedReport !== undefined){
+            //     console.log('entered');
+            //     console.log('selectedReport --> ' + JSON.stringify(this.selectedReport));
+            //     let selectedReportUpdated = this.reports.records.find(r => r.id === this.selectedReport.id);
+            //     if(selectedReportUpdated === undefined){
+            //         selectedReportUpdated = this.selectedReport;
+            //     }
+            //     console.log('SHOW ID selectedReportUpdated -->' + JSON.stringify(selectedReportUpdated));
+            //     console.log('SHOW ID this.selectedReport.id -->' + JSON.stringify(this.selectedReport.id));
+            //     console.log('SHOW ID selectedReportUpdated.id -->' + JSON.stringify(selectedReportUpdated.id));
+            //     console.log('SHOW REPORT selectedReportUpdated -->' + JSON.stringify(selectedReportUpdated));
+            //     console.log('SHOW REPORT  this.selectedReport after2 -->' + JSON.stringify(this.selectedReport));
+            //     this.selectedReport = selectedReportUpdated;
+            //   }
               this.hideSpinner();
-             
           })
           .catch(error => {
             console.log('error');
@@ -80,10 +74,8 @@ export default class ReportFinderContainer extends LightningElement {
     filteredEvent(event){
         this.pageNumber = 1;
         this.selectedReport = undefined;
+        console.log('this.pageName --> ' + this.pageNumber);
         this.showSpinner();
-        
-
-
         console.log('filteredEvent');
         this.filters = event.detail;
         console.log('this.filters --> ' + JSON.stringify(this.filters));
@@ -126,6 +118,8 @@ export default class ReportFinderContainer extends LightningElement {
         let reportId = event.detail.report.id;
         updateBookmark({reportId : reportId, isAdd : addBookmark }) 
             .then(result => {
+                console.log('bookmark Result --> ' + JSON.stringify(result));
+                this.selectedReport = result;
                 this.updateReports();
                 const modalComp =  this.template.querySelector('c-report-finder-selected-item-modal');
                 modalComp.closeSpinner();

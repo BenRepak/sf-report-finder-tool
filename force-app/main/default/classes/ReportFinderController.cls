@@ -1,6 +1,6 @@
 public with sharing class ReportFinderController {
     
-    static Integer PAGE_SIZE = 9;
+    static Integer PAGE_SIZE = 6;
 
     public class Filters {
         @AuraEnabled
@@ -32,6 +32,21 @@ public with sharing class ReportFinderController {
         public Boolean isBookmarked { get; set; }
         @AuraEnabled
         public String accessUrl { get; set; }
+
+        public ReportInfo(){
+
+        }
+
+        public ReportInfo(Advancement_Report__c advRep){
+            this.id = advRep.Id;
+            this.name = advRep.Advancement_Report_Name__c;
+            this.thumbnail = advRep.Thumbnail_URL__c;
+            this.longDescription = advRep.Report_Description__c;
+            this.shortDescription = advRep.Report_Short_Description__c + ' Click to learn more.';
+            this.type = advRep.Type__c;
+            this.isBookmarked = (advRep.Report_Finder_User_Bookmarks__r.size() > 0)? true : false;
+            this.accessUrl = advRep.Report_URL__c;
+        }
 
     }
 
@@ -81,7 +96,7 @@ public with sharing class ReportFinderController {
         Integer offset = (pageNumber - 1) * pageSize;
         PagedResult result = new PagedResult();
         result.pageSize = pageSize;
-        result.pageNumber = pageNumber;
+        
 
         
         string queryString =    'SELECT Id, Advancement_Report_Name__c,Thumbnail_URL__c, Name, Report_Description__c,Report_Short_Description__c, Type__c, Publish_Status__c, Report_URL__c ' + 
@@ -94,26 +109,22 @@ public with sharing class ReportFinderController {
 
             result.totalItemCount = Database.countQuery('SELECT count() FROM Advancement_Report__c ' + whereClause);
 
+            result.pageNumber = ( result.totalItemCount <= result.pageSize ? 1 : pageNumber);
+
 
         
         
 
         for(Advancement_Report__c advRep : Database.query(queryString)){
-            ReportInfo report = new ReportInfo();
-            report.id = advRep.Id;
-            report.name = advRep.Advancement_Report_Name__c;
-            report.thumbnail = advRep.Thumbnail_URL__c;
-            report.longDescription = advRep.Report_Description__c;
-            report.shortDescription = advRep.Report_Short_Description__c + ' Click to learn more.';
-            report.type = advRep.Type__c;
-            report.isBookmarked = (advRep.Report_Finder_User_Bookmarks__r.size() > 0)? true : false;
-            report.accessUrl = advRep.Report_URL__c;
-
+            ReportInfo report = new ReportInfo(advRep);
             reports.add(report);
 
         }
 
         result.records = reports;
+        system.debug('result --> ' + result);
+        system.debug('result.totalItemCount --> ' + result.totalItemCount);
+
 
         return result;
 

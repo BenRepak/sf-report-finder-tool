@@ -3,7 +3,7 @@ public without sharing class ReportBookmarkController {
 
 
     @AuraEnabled(cacheable=false)
-    public static void updateBookmark(Id reportId, Boolean isAdd){
+    public static ReportFinderController.ReportInfo updateBookmark(Id reportId, Boolean isAdd){
         Id currentUser = UserInfo.getUserId();
 
         Report_Finder_User_Bookmark__c bookmark = new Report_Finder_User_Bookmark__c();
@@ -35,7 +35,12 @@ public without sharing class ReportBookmarkController {
             }
         }
 
-        
+
+      Advancement_Report__c advRep =  [SELECT Id, Advancement_Report_Name__c,Thumbnail_URL__c, Name, Report_Description__c,Report_Short_Description__c, Type__c, Publish_Status__c, Report_URL__c, (SELECT Id, Name FROM Report_Finder_User_Bookmarks__r WHERE Bookmarked_By__c = : currentUser) FROM Advancement_Report__c WHERE Id = :reportId];
+      ReportFinderController.ReportInfo report = new ReportFinderController.ReportInfo(advRep);
+
+      return report;
+
     }
 
 

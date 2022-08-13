@@ -2,12 +2,13 @@
     padding: 8px;
     background-color: #ffffff;
     border-radius: 0.25rem;
-    height: 250px;
+    height: 275px;
+    text-align: center;
+    font-size: large;
 
-}
 
-a {
-    color: inherit;
+
+
 }
 
 .content:hover {
@@ -45,6 +46,11 @@ a {
     -ms-transform: scale(1.01);
     transform: scale(1.01);
     transition: 0.5s ease;
+}
+
+
+.help-icon{
+    margin: 0 0 0 90%;
 }
 
 

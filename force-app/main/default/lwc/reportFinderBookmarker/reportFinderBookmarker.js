@@ -31,4 +31,13 @@ export default class ReportFinderBookmarker extends LightningElement {
         const updatedBookmarkEvent = new CustomEvent('changebookmark', {detail : {report: this.report, addBookmark : this.addBookmark}});
         this.dispatchEvent(updatedBookmarkEvent);
         }
+
+
+    get iconAltText(){
+        if(this.isBookmarked == true){
+            return 'Remove from Bookmarks';
+        } else {
+            return 'Add to Bookmarks';
+        }
+    }
 }

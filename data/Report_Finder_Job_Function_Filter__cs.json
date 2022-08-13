@@ -58,7 +58,9 @@
                 "type": "Report_Finder_Job_Function_Filter__c",
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef7"
             },
+            "Job_Function__c": "@Report_Finder_Job_Function__cRef3",
             "Advancement_Report__c": "@Advancement_Report__cRef8"
+
         },
         {
             "attributes": {

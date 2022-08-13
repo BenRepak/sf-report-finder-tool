@@ -66,15 +66,16 @@ public with sharing class ReportFinderController {
             }
 
            
-            // if (filters.type != null) {
-            //     type = filters.type;
-            //     criteria.add('Type__c IN :materials');
-            // }
-            if (criteria.size() > 0) {
-                criteria.add('Publish_Status__c != \'Not Published\' AND Publish_Status__c != \'\'');
-                whereClause = 'WHERE ' + String.join(criteria, ' AND ');
-            }
+         
         }
+            criteria.add('Publish_Status__c != \'Not Published\' AND Publish_Status__c != \'\'');
+
+            if (criteria.size() > 0) {
+                whereClause = 'WHERE ' + String.join(criteria, ' AND ');
+                system.debug('criteria --> ' + criteria);
+                system.debug('where clause --> ' + whereClause);
+            }
+        
 
         Integer pageSize = ReportFinderController.PAGE_SIZE;
         Integer offset = (pageNumber - 1) * pageSize;

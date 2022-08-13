@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-card slds-var-p-around_x-small">
+        <template if:true={hasSelectedReport}>
+            <div class="content">
+                <div>
+                    <p class="slds-text-heading_medium">Report Details</p>
+                </div>
+                <div class="slds-m-top_medium">
+                    thumbnail goes here
+                </div>
+                <div class="slds-m-top_medium">
+                    <p class="title slds-align_absolute-center">{reportName}</p>
+                </div>
+                <div class="slds-m-top_medium">
+                    <p>{reportDescriptionLong}</p>
+                </div>
+                <div class="slds-m-top_medium">
+                    <a class="slds-button slds-button_brand" href={reportUrl} target="_blank"
+                        title="Open the linked report" icon-name="utility:new_window">Open {reportName}</a>
+                </div>
+            </div>
+        </template>
+        <template if:false={hasSelectedReport}>
+            placeholder goes here
+        </template>
+    </div>
+</template>

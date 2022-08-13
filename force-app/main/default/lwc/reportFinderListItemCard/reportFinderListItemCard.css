@@ -1,0 +1,30 @@
+
+
+
+/* .content {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+
+.content {
+    padding: 8px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    height: auto;
+
+}
+
+.thumbnail-parent {
+    height: 250px;
+    pointer-events: none;
+    display: flex;
+}
+
+
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}

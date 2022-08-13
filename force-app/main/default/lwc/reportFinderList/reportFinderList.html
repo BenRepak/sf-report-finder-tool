@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-card slds-var-p-around_x-small">
+        <p class="slds-text-heading_medium">Reports</p>
+        <template if:true={reports}>
+            <template if:true={reports.records.length}>
+                <div class="content">
+                    <template for:each={reports.records} for:item="report">
+                        <p key={report.id}>
+                            {report.name}
+                            report list item component goes here
+                        </p>
+                    </template>
+                </div>
+
+            </template>
+            <template if:false={reports.records.length}>
+             placeholder component goes here 
+            </template>
+        </template>
+        <template if:true={error}>
+            <p>Errors: </p>{error}
+            <!-- <c-error-panel errors={reports.error}></c-error-panel> -->
+        </template>
+    </div>
+</template>

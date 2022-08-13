@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Job_Function__c</fullName>
+    <externalId>false</externalId>
+    <label>Job Function</label>
+    <referenceTo>Report_Finder_Job_Function__c</referenceTo>
+    <relationshipLabel>Report Finder Job Function Filters</relationshipLabel>
+    <relationshipName>Report_Finder_Job_Function_Filter</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,50 @@
+<template>
+    <div class="slds-card slds-var-p-around_x-small">
+        <p class="slds-text-heading_medium">Report Finder Filters</p>
+        <!-- according start -->
+        <lightning-accordion class="example-accordion" allow-multiple-sections-open active-section-name="popular_report_filters">
+            <!-- popular filters -->
+            <lightning-accordion-section name="popular_report_filters" label="Popular Report Filters">
+                <lightning-input type="search" placeholder="search by report name" onchange={handleSearchKeyChange}
+                    value={searchKey}></lightning-input>
+                <div class="slds-m-top_medium">
+                    <lightning-input type="checkbox" label="My Bookmarked Reports" name="bookmarksToggle"
+                        message-toggle-active="" message-toggle-inactive="" onchange={handleChangeBookmark}
+                        checked={bookmarksOnly}></lightning-input>
+                </div>
+            </lightning-accordion-section>
+
+            <!-- job function filters -->
+            <template if:true={optionsUser}>
+                <lightning-accordion-section name="job_function_filters" label="Job Function">
+
+                    <lightning-checkbox-group name="Checkbox Group" options={optionsUser} value={valueJobFunction}
+                        onchange={handleChangeJobFunction}></lightning-checkbox-group>
+                </lightning-accordion-section>
+            </template>
+
+
+            <!-- report purpose filters -->
+            <lightning-accordion-section name="report_purpose_filters" label="Purpose">
+                <p>TESTING --> This is not currently functional</p>
+                <lightning-checkbox-group name="Checkbox Group" options={optionsCategory} value={valueCategory}
+                    onchange={handleChangeCategory}></lightning-checkbox-group>
+            </lightning-accordion-section>
+
+            <!-- report type filters -->
+            <lightning-accordion-section name="report_format_filters" label="Format">
+                <p>TESTING --> This is not currently functional</p>
+                <lightning-checkbox-group name="Checkbox Group" options={optionsType} value={valueType}
+                    onchange={handleChangeType}></lightning-checkbox-group>
+            </lightning-accordion-section>
+        </lightning-accordion>
+        <!-- accordion end -->
+
+        <!-- clear all filters button -->
+        <div>
+            <lightning-button label="Clear All Filters" title="Clear All Filters" onclick={clearFilters}
+                class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </div>
+
+</template>

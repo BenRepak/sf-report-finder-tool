@@ -57,6 +57,8 @@ export default class ReportFinderContainer extends LightningElement {
 
     filteredEvent(event){
         this.isLoaded = false;
+        this.pageNumber = 1;
+
 
         console.log('filteredEvent');
         this.filters = event.detail;

@@ -90,7 +90,7 @@ public with sharing class ReportFinderController {
             
             whereClause + 
             ' WITH SECURITY_ENFORCED' +
-            ' ORDER BY Name LIMIT :pageSize OFFSET :offset';
+            ' ORDER BY Advancement_Report_Name__c LIMIT :pageSize OFFSET :offset';
 
             result.totalItemCount = Database.countQuery('SELECT count() FROM Advancement_Report__c ' + whereClause);
 
@@ -104,7 +104,7 @@ public with sharing class ReportFinderController {
             report.name = advRep.Advancement_Report_Name__c;
             report.thumbnail = advRep.Thumbnail_URL__c;
             report.longDescription = advRep.Report_Description__c;
-            report.shortDescription = advRep.Report_Short_Description__c;
+            report.shortDescription = advRep.Report_Short_Description__c + ' Click to learn more.';
             report.type = advRep.Type__c;
             report.isBookmarked = (advRep.Report_Finder_User_Bookmarks__r.size() > 0)? true : false;
             report.accessUrl = advRep.Report_URL__c;

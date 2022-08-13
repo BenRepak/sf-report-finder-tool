@@ -41,9 +41,9 @@ a {
     
 .grow:hover{
     background-color: #cc000033;
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
     transition: 0.5s ease;
 }
 

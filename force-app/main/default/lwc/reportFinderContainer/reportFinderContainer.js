@@ -3,7 +3,7 @@ import refreshReports from '@salesforce/apex/ReportFinderController.refreshRepor
 import updateBookmark from '@salesforce/apex/ReportBookmarkController.updateBookmark';
 
 
-
+const DELAY = 200;
 export default class ReportFinderContainer extends LightningElement {
 
     /** Spinner loading status */
@@ -26,6 +26,8 @@ export default class ReportFinderContainer extends LightningElement {
     error;
 
     selectedReport;
+
+    delayTimeout;
     
 
     connectedCallback(){
@@ -34,10 +36,6 @@ export default class ReportFinderContainer extends LightningElement {
     }
 
 
-    toggleSpinner() {
-        this.isLoaded = !this.isLoaded;
-    }
-
 
     updateReports(){
       refreshReports({filters: this.filters, pageNumber: this.pageNumber }) 
@@ -45,9 +43,15 @@ export default class ReportFinderContainer extends LightningElement {
               // console.log('update result --> ' + JSON.stringify(result));
               this.reports = result;
               this.error = undefined;
-              this.isLoaded = true;
-              if(this.selectedReport){
+
+              
+              console.log('refreshReports');
+
+              if(this.selectedReport !== undefined){
                 console.log('entered');
+
+                console.log('selectedReport --> ' + JSON.stringify(this.selectedReport));
+
 
                 let selectedReportUpdated = this.reports.records.find(r => r.id === this.selectedReport.id);
                 console.log('SHOW ID this.selectedReport.id -->' + JSON.stringify(this.selectedReport.id));
@@ -59,6 +63,7 @@ export default class ReportFinderContainer extends LightningElement {
 
                 this.selectedReport = selectedReportUpdated;
               }
+              this.hideSpinner();
              
           })
           .catch(error => {
@@ -66,15 +71,17 @@ export default class ReportFinderContainer extends LightningElement {
             console.log(error);
             this.error = JSON.stringify(error);
             this.reports = undefined;
-            this.isLoaded = true;
+            this.hideSpinner();
 
           });
     }
     
 
     filteredEvent(event){
-        this.isLoaded = false;
         this.pageNumber = 1;
+        this.selectedReport = undefined;
+        this.showSpinner();
+        
 
 
         console.log('filteredEvent');
@@ -94,7 +101,8 @@ export default class ReportFinderContainer extends LightningElement {
 
 
     handlePreviousPage() {
-        this.isLoaded = false;
+        this.selectedReport = undefined;
+        this.showSpinner();
         this.pageNumber = this.pageNumber - 1;
         this.updateReports();
 
@@ -102,11 +110,10 @@ export default class ReportFinderContainer extends LightningElement {
     }
 
     handleNextPage() {
-        this.isLoaded = false;
+        this.selectedReport = undefined;
+        this.showSpinner();
         this.pageNumber = this.pageNumber + 1;
         this.updateReports();
-
-
     }
 
 
@@ -119,30 +126,38 @@ export default class ReportFinderContainer extends LightningElement {
         let reportId = event.detail.report.id;
         updateBookmark({reportId : reportId, isAdd : addBookmark }) 
             .then(result => {
-                // this.dispatchEvent(
-                //     new ShowToastEvent({
-                //         title: 'Success',
-                //         message: this.toastMessage,
-                //         variant: 'success',
-                //     }),
-                // );
-                // this.isBookmarked = this.createBookmark;
-
-                
-
                 this.updateReports();
                 const modalComp =  this.template.querySelector('c-report-finder-selected-item-modal');
                 modalComp.closeSpinner();
-               
-
-
-
             })
             .catch(error => {
                console.log('error --> ' + JSON.stringify(error));
                console.log('error --> ' + error);
-
             });
     }
+
+
+    showSpinner(){
+        window.clearTimeout(this.delayTimeout);
+        // eslint-disable-next-line @lwc/lwc/no-async-operation
+        this.delayTimeout = setTimeout(() => {
+
+            this.isLoaded = false;
+            console.log('showSpinner');
+
+        }, DELAY);
+    }
+
+    hideSpinner(){
+        this.isLoaded = true;
+        clearTimeout(this.delayTimeout);
+        
+    }
+
+
+
+
+
+
 
 }

@@ -6,7 +6,7 @@ export default class ReportFinderList extends LightningElement {
     reports;
 
     handleReportSelected(event) {
-        console.log('handleReportSelected');
+        console.log('handleReportSelected in reportFinderList');
        // console.log(JSON.stringify(event.detail));   
         console.log('report Id --> ' + event.detail.Id);
         const selectedReportEvent = new CustomEvent('reportselected', {

@@ -5,10 +5,9 @@
             <template if:true={reports.records.length}>
                 <div class="content">
                     <template for:each={reports.records} for:item="report">
-                        <p key={report.id}>
-                            {report.name}
-                            report list item component goes here
-                        </p>
+                        <c-report-finder-list-item key={report.id} report={report} onreportselected = {handleReportSelected}
+                        class="slds-var-m-around_x-small">
+                           </c-report-finder-list-item>
                     </template>
                 </div>
 

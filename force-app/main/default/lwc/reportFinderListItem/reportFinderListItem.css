@@ -1,0 +1,43 @@
+.content {
+    padding: 8px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    height: 250px;
+
+}
+
+a {
+    color: inherit;
+}
+
+.content:hover {
+    border-style: solid;
+    border-color: #ffffff83;
+    cursor: pointer;
+  }
+
+.reportSelected {
+    border-style: solid;
+    border-color: #cc0000;
+    
+}
+
+
+
+.title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+.thumbnail-parent {
+    height: 150px;
+    pointer-events: none;
+    display: flex;
+}
+
+
+
+
+

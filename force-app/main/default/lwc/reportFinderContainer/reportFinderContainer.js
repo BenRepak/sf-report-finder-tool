@@ -18,6 +18,8 @@ export default class ReportFinderContainer extends LightningElement {
     
     reports;
     error;
+
+    selectedReport;
     
 
     connectedCallback(){
@@ -46,6 +48,15 @@ export default class ReportFinderContainer extends LightningElement {
         this.filters = event.detail;
         console.log('this.filters --> ' + JSON.stringify(this.filters));
         this.updateReports();
+    }
+
+    selectedEvent(event){
+        console.log('selectedEvent in contatiner');
+        this.selectedReport = event.detail;
+        // console.log(JSON.stringify(this.selectedReport));  
+        const modalComp =  this.template.querySelector('c-report-finder-selected-item-modal');
+        modalComp.showModal();
+        
     }
 
 }

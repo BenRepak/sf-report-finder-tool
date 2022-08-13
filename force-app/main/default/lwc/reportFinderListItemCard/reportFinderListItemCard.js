@@ -37,4 +37,11 @@ export default class ReportFinderListItemCard extends LightningElement {
             return '';
         }
     }
+
+
+    handleBookmarkChange(event){
+        console.log('handleBookmarkChange in listItemCard');
+        const updatedBookmarkEvent = new CustomEvent('changebookmark', {detail : event.detail});
+        this.dispatchEvent(updatedBookmarkEvent);
+    }
 }

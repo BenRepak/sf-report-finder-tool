@@ -6,12 +6,17 @@
         <div class="slds-col slds-size_9-of-12">
             <c-report-finder-list reports={reports} onreportselected={selectedEvent} onprevious={handlePreviousPage}
                 onnext={handleNextPage}></c-report-finder-list>
+
         </div>
-        <div>
-            <c-report-finder-selected-item-modal report={selectedReport}></c-report-finder-selected-item-modal>
+        <div class="">
+            <c-report-finder-selected-item-modal report={selectedReport} onchangebookmark={handleBookmarkChange}>
+            </c-report-finder-selected-item-modal>
         </div>
         <div if:false={isLoaded}>
             <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
         </div>
+        
     </div>
+
+   
 </template>

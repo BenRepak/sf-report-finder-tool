@@ -11,17 +11,24 @@
             bookmark component goes here
           </div>  
           <!------Body Section-->  
-          <div class="slds-modal__content slds-p-around_medium">  
+          <div class="slds-modal__content slds-p-around_medium modalBody">  
             <center>  
-              <c-report-finder-list-item-card report={report}></c-report-finder-list-item-card>
+              <c-report-finder-list-item-card report={report} onchangebookmark={handleBookmarkChange}></c-report-finder-list-item-card>
             </center>  
-          </div>  
+            <div if:false={isLoaded} >
+              <lightning-spinner alternative-text="Loading..." size="large" class=""></lightning-spinner>
+            </div> 
+            
+          </div>
+         
           <!------Footer Section-->  
           <div class="slds-modal__footer">  
             <!-- <lightning-button icon-name="utility:back" label="Close" variant="destructive"  onclick={closeModal}>  
             </lightning-button>   -->
           </div>  
+          
         </div>  
-      </div>  
+   
+      </div> 
     </template>  
   </template>  

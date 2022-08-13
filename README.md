@@ -9,7 +9,8 @@ sfdx auth:web:login -d -a myhuborg
 ```
 2. Clone this repo:
 ```
-
+git clone https://github.com/BenRepak/sf-report-finder-tool
+cd sf-report-finder-tool
 ```
 3. Create a scratch org and set an alias: 
 ```

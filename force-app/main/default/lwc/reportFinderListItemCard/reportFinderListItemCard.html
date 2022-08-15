@@ -1,5 +1,5 @@
 <template>
-    <div class="slds-card slds-var-p-around_x-small">
+    <div class="slds-card slds-var-p-around_x-small ">
         <template if:true={hasSelectedReport}>
             <div class="content">
                 <div class="slds-m-top_medium">
@@ -12,10 +12,11 @@
                 <div class="slds-m-top_medium">
                     <p>{reportDescriptionLong}</p>
                 </div>
+            
+    
                 <div class="slds-m-top_medium">
                     <c-report-finder-bookmarker report={report} onchangebookmark={handleBookmarkChange}
                         class="slds-float_left"></c-report-finder-bookmarker>
-
                     <a class="slds-button slds-button_neutral slds-float_right" href={reportUrl} target="_blank"
                         title="Open the linked report" icon-name="utility:new_window">
                         <lightning-icon icon-name="utility:new_window" alternative-text="Open Report"
@@ -23,9 +24,8 @@
                         </lightning-icon>Open
                     </a>
                 </div>
-
-
             </div>
+            <!-- end content -->
         </template>
         <template if:false={hasSelectedReport}>
             An error occured. Please refresh.

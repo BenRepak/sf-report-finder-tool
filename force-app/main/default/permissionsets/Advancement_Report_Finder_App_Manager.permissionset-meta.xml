@@ -13,7 +13,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Report_Finder_Item__c.Report_Description__c</field>
+        <field>Report_Finder_Item__c.Long_Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

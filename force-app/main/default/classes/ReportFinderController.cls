@@ -41,11 +41,11 @@ public with sharing class ReportFinderController {
             this.id = item.Id;
             this.name = item.Item_Name__c;
             this.thumbnail = item.Thumbnail_URL__c;
-            this.longDescription = item.Report_Description__c;
-            this.shortDescription = item.Report_Short_Description__c + ' Click to learn more.';
+            this.longDescription = item.Long_Description__c;
+            this.shortDescription = item.Short_Description__c + ' Click to learn more.';
             this.type = item.Type__c;
             this.isBookmarked = (item.Report_Finder_User_Bookmarks__r.size() > 0)? true : false;
-            this.accessUrl = item.Report_URL__c;
+            this.accessUrl = item.Access_URL__c;
         }
 
     }
@@ -68,7 +68,7 @@ public with sharing class ReportFinderController {
             if (!String.isEmpty(filters.searchKey)) {
                 String cleansedKey = String.escapeSingleQuotes(filters.searchKey);
                 key = '%' + filters.searchKey + '%';
-                criteria.add('(Item_Name__c LIKE : key OR Report_Short_Description__c LIKE : key)');
+                criteria.add('(Item_Name__c LIKE : key OR Short_Description__c LIKE : key)');
             }
            
             if (filters.jobFunctions != null && filters.jobFunctions.size() > 0) {
@@ -105,7 +105,7 @@ public with sharing class ReportFinderController {
         
 
         
-        string queryString =    'SELECT Id, Item_Name__c,Thumbnail_URL__c, Name, Report_Description__c,Report_Short_Description__c, Type__c, Publish_Status__c, Report_URL__c ' + 
+        string queryString =    'SELECT Id, Item_Name__c,Thumbnail_URL__c, Name, Long_Description__c,Short_Description__c, Type__c, Publish_Status__c, Access_URL__c ' + 
             ',(SELECT Id, Name FROM Report_Finder_User_Bookmarks__r WHERE Bookmarked_By__c = : currentUser) ' + 
             ' FROM Report_Finder_Item__c ' +
             

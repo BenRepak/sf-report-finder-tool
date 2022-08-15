@@ -58,7 +58,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Advancement_Report__c-Advancement Report Layout</layout>
+        <layout>Advancement_Report__c-Report Finder Item Detail</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Report_Finder_Category_Filter__c-Report Finder Job Category Filter Layout</layout>

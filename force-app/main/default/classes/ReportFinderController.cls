@@ -83,7 +83,7 @@ public with sharing class ReportFinderController {
 
             // bookmarks only
             if(filters.bookmarksOnly == true){
-                criteria.add('Id IN (SELECT Advancement_Report__c FROM Report_Finder_User_Bookmark__c WHERE Bookmarked_By__c = :currentUser)');
+                criteria.add('Id IN (SELECT Report_Finder_Item__c FROM Report_Finder_User_Bookmark__c WHERE Bookmarked_By__c = :currentUser)');
             }
 
            

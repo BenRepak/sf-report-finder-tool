@@ -8,9 +8,9 @@ public without sharing class ReportBookmarkController {
 
         Report_Finder_User_Bookmark__c bookmark = new Report_Finder_User_Bookmark__c();
         bookmark.Bookmarked_By__c = currentUser;
-        bookmark.Advancement_Report__c = reportId;
+        bookmark.Report_Finder_Item__c = reportId;
         List<Report_Finder_User_Bookmark__c> bookmarks = new List<Report_Finder_User_Bookmark__c>();
-        bookmarks = [SELECT Id FROM Report_Finder_User_Bookmark__c WHERE Bookmarked_By__c = :currentUser AND Advancement_Report__c = :reportId];
+        bookmarks = [SELECT Id FROM Report_Finder_User_Bookmark__c WHERE Bookmarked_By__c = :currentUser AND Report_Finder_Item__c = :reportId];
 
         if(isAdd){
            

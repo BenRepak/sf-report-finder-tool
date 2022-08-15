@@ -90,7 +90,7 @@
         <fields>Report_Finder_Category__c.Is_Active__c</fields>
         <fields>User.LAST_UPDATE_BY</fields>
         <fields>Report_Finder_Category__c.LAST_UPDATE</fields>
-        <relatedList>Report_Finder_Job_Category_Filter__c.Report__c</relatedList>
+        <relatedList>Report_Finder_Category_Filter__c.Report_Detail__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

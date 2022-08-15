@@ -246,7 +246,7 @@
         <name>rightcol</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Advancement Report Default LRP</masterLabel>
+    <masterLabel>Report Finder Item Detail Default LRP</masterLabel>
     <sobjectType>Advancement_Report__c</sobjectType>
     <template>
         <name>flexipage:recordHomeTwoColEqualHeaderTemplateDesktop</name>

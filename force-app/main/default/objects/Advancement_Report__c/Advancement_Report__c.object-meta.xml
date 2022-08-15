@@ -169,9 +169,9 @@
     <pluralLabel>Advancement Reports</pluralLabel>
     <searchLayouts>
         <searchResultsAdditionalFields>Advancement_Report_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Report_Description__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Publish_Status__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Report_URL__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>

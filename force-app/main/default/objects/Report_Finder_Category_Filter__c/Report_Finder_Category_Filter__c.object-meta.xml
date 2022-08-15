@@ -153,14 +153,14 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>Report Finder Job Category Filter</label>
+    <label>Report Finder Category Filter</label>
     <nameField>
         <displayFormat>RFCF-{0}</displayFormat>
-        <label>Report Finder Job Category Filter #</label>
+        <label>Report Finder Category Filter #</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Report Finder Job Category Filters</pluralLabel>
+    <pluralLabel>Report Finder Category Filters</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

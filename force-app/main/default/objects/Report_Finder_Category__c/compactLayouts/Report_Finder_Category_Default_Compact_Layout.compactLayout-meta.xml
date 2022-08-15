@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Finder_Category_Default_Compact_Layout</fullName>
+    <fields>Category_Name__c</fields>
+    <fields>Name</fields>
+    <fields>Is_Active__c</fields>
+    <fields>LastModifiedById</fields>
+    <label>Report Finder Category Default Compact Layout</label>
+</CompactLayout>

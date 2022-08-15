@@ -4,8 +4,7 @@
     <externalId>false</externalId>
     <label>Report Finder Category</label>
     <referenceTo>Report_Finder_Category__c</referenceTo>
-    <relationshipLabel>Report Finder Job Category Filters</relationshipLabel>
-    <relationshipName>Report_Finder_Job_Category_Filters</relationshipName>
+    <relationshipName>Report_Finder_Category_Filters</relationshipName>
     <relationshipOrder>1</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackHistory>false</trackHistory>

@@ -9,13 +9,13 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Report_Finder_Category__c</field>
+                <field>Report_Detail__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Report__c</field>
+                <field>Report_Finder_Category__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

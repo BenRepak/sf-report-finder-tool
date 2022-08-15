@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Report__c</fullName>
+    <fullName>Report_Detail__c</fullName>
     <externalId>false</externalId>
-    <label>Report</label>
+    <label>Report Detail</label>
     <referenceTo>Advancement_Report__c</referenceTo>
-    <relationshipLabel>Report Finder Job Category Filters</relationshipLabel>
-    <relationshipName>Report_Finder_Job_Category_Filters</relationshipName>
+    <relationshipName>Report_Finder_Category_Filters</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackHistory>false</trackHistory>

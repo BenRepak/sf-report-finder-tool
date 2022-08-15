@@ -6,7 +6,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef1"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef1",
-            "Advancement_Report__c": "@Advancement_Report__cRef1"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef1"
 
         },
         {
@@ -15,7 +15,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef2"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef1",
-            "Advancement_Report__c": "@Advancement_Report__cRef1"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef1"
 
         },
         {
@@ -24,7 +24,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef3"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef2",
-            "Advancement_Report__c": "@Advancement_Report__cRef2"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef2"
 
         },
         {
@@ -33,7 +33,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef4"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef3",
-            "Advancement_Report__c": "@Advancement_Report__cRef2"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef2"
         },
         {
             "attributes": {
@@ -41,7 +41,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef5"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef3",
-            "Advancement_Report__c": "@Advancement_Report__cRef4"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef4"
 
         },
         {
@@ -50,7 +50,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef6"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef3",
-            "Advancement_Report__c": "@Advancement_Report__cRef6"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef6"
 
         },
         {
@@ -59,7 +59,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef7"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef3",
-            "Advancement_Report__c": "@Advancement_Report__cRef8"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef8"
 
         },
         {
@@ -68,7 +68,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef8"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef3",
-            "Advancement_Report__c": "@Advancement_Report__cRef9"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef9"
             
 
         },
@@ -78,7 +78,7 @@
                 "referenceId": "Report_Finder_Job_Function_Filter__cRef9"
             },
             "Job_Function__c": "@Report_Finder_Job_Function__cRef3",
-            "Advancement_Report__c": "@Advancement_Report__cRef10"
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef10"
 
         }
     ]

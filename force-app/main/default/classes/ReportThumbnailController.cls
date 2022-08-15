@@ -7,29 +7,22 @@ public with sharing class ReportThumbnailController {
         ContentVersion cv = [select id, title from contentversion where contentdocumentid =:contentDocumentId];
         
 
-        Advancement_Report__c ar = new Advancement_Report__c();
-        ar.id = parentRecordId;
-        ar.thumbnail_url__c = '/sfc/servlet.shepherd/version/download/' + cv.id;
-        update ar;
+        Report_Finder_Item__c item = new Report_Finder_Item__c();
+        item.id = parentRecordId;
+        item.thumbnail_url__c = '/sfc/servlet.shepherd/version/download/' + cv.id;
+        update item;
 
-        return ar.thumbnail_url__c ;
+         return  item.thumbnail_url__c ;
     }
     
 
     @AuraEnabled(cacheable=true)
     public static string getReportThumbnail(Id parentRecordId){
 
-        Advancement_Report__c ar = new Advancement_Report__c();
-        ar = [select thumbnail_url__c from Advancement_Report__c where Id =:parentRecordId];
+        Report_Finder_Item__c item = new Report_Finder_Item__c();
+        item = [select thumbnail_url__c from Report_Finder_Item__c where Id =:parentRecordId];
 
-        // ContentVersion cv = [select id, title from contentversion where contentdocumentid =:contentDocumentId];
-
-
-        
-
-    
-
-        return ar.thumbnail_url__c ;
+        return item.thumbnail_url__c ;
 
     }
 

@@ -159,14 +159,14 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Advancement Report</label>
+    <label>Report Finder Item</label>
     <nameField>
-        <displayFormat>AR-{0}</displayFormat>
-        <label>Advancement Report #</label>
+        <displayFormat>RFI-{0}</displayFormat>
+        <label>Report Finder Item #</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Advancement Reports</pluralLabel>
+    <pluralLabel>Report Finder Items</pluralLabel>
     <searchLayouts>
         <searchResultsAdditionalFields>Advancement_Report_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>

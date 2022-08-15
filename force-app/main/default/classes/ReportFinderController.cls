@@ -37,15 +37,15 @@ public with sharing class ReportFinderController {
 
         }
 
-        public ReportInfo(Advancement_Report__c advRep){
-            this.id = advRep.Id;
-            this.name = advRep.Advancement_Report_Name__c;
-            this.thumbnail = advRep.Thumbnail_URL__c;
-            this.longDescription = advRep.Report_Description__c;
-            this.shortDescription = advRep.Report_Short_Description__c + ' Click to learn more.';
-            this.type = advRep.Type__c;
-            this.isBookmarked = (advRep.Report_Finder_User_Bookmarks__r.size() > 0)? true : false;
-            this.accessUrl = advRep.Report_URL__c;
+        public ReportInfo(Report_Finder_Item__c item){
+            this.id = item.Id;
+            this.name = item.Advancement_Report_Name__c;
+            this.thumbnail = item.Thumbnail_URL__c;
+            this.longDescription = item.Report_Description__c;
+            this.shortDescription = item.Report_Short_Description__c + ' Click to learn more.';
+            this.type = item.Type__c;
+            this.isBookmarked = (item.Report_Finder_User_Bookmarks__r.size() > 0)? true : false;
+            this.accessUrl = item.Report_URL__c;
         }
 
     }
@@ -107,13 +107,13 @@ public with sharing class ReportFinderController {
         
         string queryString =    'SELECT Id, Advancement_Report_Name__c,Thumbnail_URL__c, Name, Report_Description__c,Report_Short_Description__c, Type__c, Publish_Status__c, Report_URL__c ' + 
             ',(SELECT Id, Name FROM Report_Finder_User_Bookmarks__r WHERE Bookmarked_By__c = : currentUser) ' + 
-            ' FROM Advancement_Report__c ' +
+            ' FROM Report_Finder_Item__c ' +
             
             whereClause + 
             ' WITH SECURITY_ENFORCED' +
             ' ORDER BY Advancement_Report_Name__c LIMIT :pageSize OFFSET :offset';
 
-            result.totalItemCount = Database.countQuery('SELECT count() FROM Advancement_Report__c ' + whereClause);
+            result.totalItemCount = Database.countQuery('SELECT count() FROM Report_Finder_Item__c ' + whereClause);
 
             result.pageNumber = ( result.totalItemCount <= result.pageSize ? 1 : pageNumber);
 
@@ -121,8 +121,8 @@ public with sharing class ReportFinderController {
         
         
 
-        for(Advancement_Report__c advRep : Database.query(queryString)){
-            ReportInfo report = new ReportInfo(advRep);
+        for(Report_Finder_Item__c item : Database.query(queryString)){
+            ReportInfo report = new ReportInfo(item);
             reports.add(report);
 
         }
@@ -166,7 +166,7 @@ public with sharing class ReportFinderController {
     @AuraEnabled(cacheable=true)
     public static List<String> getReportTypes() {
         List<String> reportTypes = new List<String>();
-        Schema.DescribeFieldResult reportTypeFields = Advancement_Report__c.Type__c.getDescribe();
+        Schema.DescribeFieldResult reportTypeFields = Report_Finder_Item__c.Type__c.getDescribe();
         for(Schema.PicklistEntry fld : reportTypeFields.getPicklistValues()){
             if(fld.isActive() == true){
                 reportTypes.add(fld.getValue());

@@ -82,7 +82,7 @@
         <fields>Report_Finder_Job_Function__c.Is_Active__c</fields>
         <fields>UPDATEDBY_USER.ALIAS</fields>
         <fields>LAST_UPDATE</fields>
-        <relatedList>Report_Finder_Job_Function_Filter__c.Advancement_Report__c</relatedList>
+        <relatedList>Report_Finder_Job_Function_Filter__c.Report_Finder_Item__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -90,7 +90,7 @@
         <fields>Report_Finder_Category__c.Is_Active__c</fields>
         <fields>User.LAST_UPDATE_BY</fields>
         <fields>Report_Finder_Category__c.LAST_UPDATE</fields>
-        <relatedList>Report_Finder_Category_Filter__c.Report_Detail__c</relatedList>
+        <relatedList>Report_Finder_Category_Filter__c.Report_Finder_Item__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -98,7 +98,7 @@
         <fields>CREATED_DATE</fields>
         <fields>UPDATEDBY_USER</fields>
         <fields>LAST_UPDATE</fields>
-        <relatedList>Report_Finder_User_Bookmark__c.Advancement_Report__c</relatedList>
+        <relatedList>Report_Finder_User_Bookmark__c.Report_Finder_Item__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedEntityHistoryList</relatedList>

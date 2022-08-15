@@ -24,22 +24,22 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Advancement_Report__c.Report_Description__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Advancement_Report__c.Thumbnail_URL__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Report_Finder_Category__c.Category_Description__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Report_Finder_Category__c.Is_Active__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Report_Finder_Item__c.Report_Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Report_Finder_Item__c.Thumbnail_URL__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -58,13 +58,13 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Advancement_Report__c-Report Finder Item Detail</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Report_Finder_Category_Filter__c-Report Finder Job Category Filter Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Report_Finder_Category__c-Report Finder Category Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Report_Finder_Item__c-Report Finder Item Detail</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Report_Finder_Job_Function_Filter__c-Report Finder Job Function Filter Layout</layout>
@@ -81,15 +81,6 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Advancement_Report__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
         <object>Report_Finder_Category_Filter__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -100,6 +91,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Report_Finder_Category__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Report_Finder_Item__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -134,11 +134,11 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>Advancement_Report__c</tab>
+        <tab>Report_Finder_Category__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>Report_Finder_Category__c</tab>
+        <tab>Report_Finder_Item__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

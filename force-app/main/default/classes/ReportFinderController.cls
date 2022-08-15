@@ -73,7 +73,7 @@ public with sharing class ReportFinderController {
            
             if (filters.jobFunctions != null && filters.jobFunctions.size() > 0) {
                 jobFunctions = filters.jobFunctions;
-                criteria.add('Id IN (SELECT Advancement_Report__c FROM Report_Finder_Job_Function_Filter__c WHERE Job_Function__r.Job_Function_Name__c IN :jobFunctions)');
+                criteria.add('Id IN (SELECT Report_Finder_Item__c FROM Report_Finder_Job_Function_Filter__c WHERE Job_Function__r.Job_Function_Name__c IN :jobFunctions)');
             }
 
             if (filters.type != null && filters.type.size() > 0) {

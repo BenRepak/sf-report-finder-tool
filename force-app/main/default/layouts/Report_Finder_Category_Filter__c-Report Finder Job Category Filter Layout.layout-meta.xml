@@ -9,7 +9,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Report_Detail__c</field>
+                <field>Report_Finder_Item__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

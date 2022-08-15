@@ -8,7 +8,7 @@ public with sharing class ReportFinderController {
         @AuraEnabled
         public String[] jobFunctions { get; set; }
         @AuraEnabled
-        public String type { get; set; }
+        public String[] type { get; set; }
         @AuraEnabled
         public Boolean bookmarksOnly { get; set; }
     }
@@ -61,8 +61,8 @@ public with sharing class ReportFinderController {
         //https://github.com/trailheadapps/ebikes-lwc/blob/main/force-app/main/default/classes/ProductController.cls
 
         List<ReportInfo> reports = new List<ReportInfo>();
-        String key, type, whereClause = '';
-        String[] jobFunctions, criteria = new List<String>{};
+        String key, whereClause = '';
+        String[] jobFunctions, type, criteria = new List<String>{};
         Id currentUser = UserInfo.getUserId();
         if (filters != null) {
             if (!String.isEmpty(filters.searchKey)) {
@@ -73,6 +73,11 @@ public with sharing class ReportFinderController {
             if (filters.jobFunctions != null && filters.jobFunctions.size() > 0) {
                 jobFunctions = filters.jobFunctions;
                 criteria.add('Id IN (SELECT Advancement_Report__c FROM Report_Finder_Job_Function_Filter__c WHERE Job_Function__r.Job_Function_Name__c IN :jobFunctions)');
+            }
+
+            if (filters.type != null && filters.type.size() > 0) {
+                type = filters.type;
+                criteria.add('Type__c = :type');
             }
 
             // bookmarks only
@@ -144,6 +149,20 @@ public with sharing class ReportFinderController {
             jobFunctions.add(jobFunction.Job_Function_Name__c);
         }
         return jobFunctions;
+    }
+
+
+
+    @AuraEnabled(cacheable=true)
+    public static List<String> getReportTypes() {
+        List<String> reportTypes = new List<String>();
+        Schema.DescribeFieldResult reportTypeFields = Advancement_Report__c.Type__c.getDescribe();
+        for(Schema.PicklistEntry fld : reportTypeFields.getPicklistValues()){
+            if(fld.isActive() == true){
+                reportTypes.add(fld.getValue());
+            }   
+        }
+        return reportTypes;
     }
 
 

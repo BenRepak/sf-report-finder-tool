@@ -1,5 +1,7 @@
 import { LightningElement } from 'lwc';
 import getJobFunctions from '@salesforce/apex/ReportFinderController.getJobFunctions';
+import getReportTypes from '@salesforce/apex/ReportFinderController.getReportTypes';
+
 // The delay used when debouncing event handlers before firing the event
 const DELAY = 350;
 
@@ -13,12 +15,40 @@ export default class ReportFinderFilters extends LightningElement {
     bookmarksOnly = false;
 
     optionsUser = [];
+    optionsType = [];
 
     filters = {};
     
     connectedCallback() {
         this.getOptionsUser();
+        this.getOptionsType();
     }
+
+    getOptionsType() {
+        console.log('getOptionsType');
+        let options = [];
+        getReportTypes()
+            .then((result) => {
+            if (result) {
+                console.log('getOptionsType result' + JSON.stringify(result));
+                result.forEach(r => {
+                options.push({
+                    label: r,
+                    value: r,
+                });
+                });
+            }
+            console.log('getOptionsType options' + JSON.stringify(options));
+            this.optionsType =  options;
+
+            })
+            .catch((error) => {
+            // handle Error
+            console.log('error');
+            });
+    }
+
+
     
 
     getOptionsUser() {
@@ -46,12 +76,12 @@ export default class ReportFinderFilters extends LightningElement {
     }
 
 
-    get optionsType() {
-        return [
-            { label: 'Salesforce Report', value: 'salesforce report' },
-            { label: 'Tableau Dashboard', value: 'tableau dashboard' },
-        ];
-    }
+    // get optionsType() {
+    //     return [
+    //         { label: 'Salesforce Report', value: 'salesforce report' },
+    //         { label: 'Tableau Dashboard', value: 'tableau dashboard' },
+    //     ];
+    // }
 
     get optionsCategory() {
         return [
@@ -68,6 +98,8 @@ export default class ReportFinderFilters extends LightningElement {
     }
     handleChangeType(e) {
         this.valueType = e.detail.value;
+        this.buildFilters();
+        this.fireFilterChangeEvent();  
     }
     handleChangeCategory(e) {
         this.valueCategory = e.detail.value;
@@ -93,6 +125,7 @@ export default class ReportFinderFilters extends LightningElement {
         this.filters.searchKey = this.searchKey;
         this.filters.jobFunctions = this.valueJobFunction;
         this.filters.bookmarksOnly = this.bookmarksOnly;
+        this.filters.type = this.valueType;
        // this.filters.userRoles = this.valueJobFunction;
         console.log('this.filters --> ' + JSON.stringify(this.filters));
     }

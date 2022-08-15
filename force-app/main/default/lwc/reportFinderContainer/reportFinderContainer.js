@@ -3,7 +3,7 @@ import refreshReports from '@salesforce/apex/ReportFinderController.refreshRepor
 import updateBookmark from '@salesforce/apex/ReportBookmarkController.updateBookmark';
 
 
-const DELAY = 200;
+const DELAY = 250;
 export default class ReportFinderContainer extends LightningElement {
 
     /** Spinner loading status */

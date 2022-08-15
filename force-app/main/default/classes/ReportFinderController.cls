@@ -53,7 +53,7 @@ public with sharing class ReportFinderController {
             this.isBookmarked = (item.Report_Finder_User_Bookmarks__r.size() > 0)? true : false;
             this.accessUrl = item.Access_URL__c;
             this.jobFunctions = new List<String>{'Job1','Job2'};
-            this.categories = new List<String>{'Cat1','Cat2','Cat3','Cat4','Cat5','Cat6','Cat7','Cat8','Cat1','Cat2','Cat3','Cat4','Cat5','Cat6','Cat7','Cat8'};
+            this.categories = new List<String>{'This is a word','Cat2','Another word','Cat4','Cat5'};
         }
 
     }

@@ -3,7 +3,7 @@
     <fullName>Report_Finder_Item__c</fullName>
     <externalId>false</externalId>
     <label>Report Finder Item</label>
-    <referenceTo>Advancement_Report__c</referenceTo>
+    <referenceTo>Report_Finder_Item__c</referenceTo>
     <relationshipLabel>Report Finder User Bookmarks</relationshipLabel>
     <relationshipName>Report_Finder_User_Bookmarks</relationshipName>
     <relationshipOrder>0</relationshipOrder>

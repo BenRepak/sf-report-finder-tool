@@ -10,7 +10,7 @@
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Advancement Report Finder</masterLabel>
+    <masterLabel>Report Finder</masterLabel>
     <template>
         <name>flexipage:defaultAppHomeTemplate</name>
     </template>

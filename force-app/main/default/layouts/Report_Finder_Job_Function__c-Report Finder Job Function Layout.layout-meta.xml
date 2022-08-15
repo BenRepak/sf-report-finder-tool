@@ -62,7 +62,7 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Advancement_Report__c.NAME</fields>
+        <fields>Report_Finder_Item__c.NAME</fields>
         <relatedList>Report_Finder_Job_Function_Filter__c.Job_Function__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

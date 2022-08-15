@@ -1,0 +1,31 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Report_Finder_Category__c",
+                "referenceId": "Report_Finder_Category__cRef1"
+            },
+            "Category_Name__c": "Contact Lists",
+            "Is_Active__c": true,
+            "Category_Description__c": null
+        },
+        {
+            "attributes": {
+                "type": "Report_Finder_Category__c",
+                "referenceId": "Report_Finder_Category__cRef2"
+            },
+            "Category_Name__c": "Recognition Lists",
+            "Is_Active__c": true,
+            "Category_Description__c": null
+        },
+        {
+            "attributes": {
+                "type": "Report_Finder_Category__c",
+                "referenceId": "Report_Finder_Category__cRef3"
+            },
+            "Category_Name__c": "Stewardship",
+            "Is_Active__c": true,
+            "Category_Description__c": null
+        }
+    ]
+}

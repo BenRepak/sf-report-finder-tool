@@ -149,6 +149,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>These records hold details about reports, including filters, tags, and types.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -168,11 +169,11 @@
     </nameField>
     <pluralLabel>Report Finder Items</pluralLabel>
     <searchLayouts>
-        <searchResultsAdditionalFields>Advancement_Report_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Item_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Report_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Long_Description__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Publish_Status__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Report_URL__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Access_URL__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <startsWith>Vowel</startsWith>

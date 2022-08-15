@@ -1,0 +1,36 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Report_Finder_Category_Filter__c",
+                "referenceId": "Report_Finder_Category_Filter__cRef1"
+            },
+            "Report_Finder_Category__c": "@Report_Finder_Category__cRef1",
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Report_Finder_Category_Filter__c",
+                "referenceId": "Report_Finder_Category_Filter__cRef2"
+            },
+            "Report_Finder_Category__c": "@Report_Finder_Category__cRef1",
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Report_Finder_Category_Filter__c",
+                "referenceId": "Report_Finder_Category_Filter__cRef3"
+            },
+            "Report_Finder_Category__c": "@Report_Finder_Category__cRef2",
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef2"
+        },
+        {
+            "attributes": {
+                "type": "Report_Finder_Category_Filter__c",
+                "referenceId": "Report_Finder_Category_Filter__cRef4"
+            },
+            "Report_Finder_Category__c": "@Report_Finder_Category__cRef3",
+            "Report_Finder_Item__c": "@Report_Finder_Item__cRef3"
+        }
+    ]
+}

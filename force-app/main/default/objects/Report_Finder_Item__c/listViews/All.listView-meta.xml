@@ -2,9 +2,9 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>All</fullName>
     <columns>NAME</columns>
-    <columns>Advancement_Report_Name__c</columns>
-    <columns>Report_Short_Description__c</columns>
-    <columns>Report_URL__c</columns>
+    <columns>Item_Name__c</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Access_URL__c</columns>
     <columns>Thumbnail_URL__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>

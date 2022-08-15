@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Allows users to view and edit Advancement Report records and reporting metrics.</description>
+    <applicationVisibilities>
+        <application>Report_Finder_App</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>Used by Admins to manage the configuration and data of the Report Finder App</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Report_Finder_Category__c.Category_Description__c</field>
@@ -37,13 +41,13 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Advancement Report Finder App Manager</label>
+    <label>Report Finder App Manager</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Report_Finder_Category_Filter__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -93,7 +97,7 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
-        <tab>Advancement_Report_Finder</tab>
+        <tab>Report_Finder</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

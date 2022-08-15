@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
-        <application>standard__LightningSales</application>
+        <application>Report_Finder_App</application>
         <default>false</default>
-        <visible>true</visible>
+        <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
         <apexClass>PagedResult</apexClass>
@@ -130,7 +130,7 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabVisibilities>
-        <tab>Advancement_Report_Finder</tab>
+        <tab>Report_Finder</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

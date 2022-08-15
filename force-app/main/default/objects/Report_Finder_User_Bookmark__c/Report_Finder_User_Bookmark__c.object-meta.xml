@@ -143,7 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>Advancement_Report_Favorite_Default_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Records are created when users bookmark a report. Records are deleted when users remove the bookmark.</description>
+    <description>Associative entity between Report Finder Items and Users. Used to bookmark/favorite reports for user quick reference.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>

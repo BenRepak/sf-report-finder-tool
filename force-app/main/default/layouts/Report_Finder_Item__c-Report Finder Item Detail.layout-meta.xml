@@ -9,7 +9,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Advancement_Report_Name__c</field>
+                <field>Item_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

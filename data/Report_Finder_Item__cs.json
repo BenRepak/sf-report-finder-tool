@@ -5,7 +5,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef1"
             },
-            "Advancement_Report_Name__c": "Lapsed Donor Report",
+            "Item_Name__c": "Lapsed Donor Report",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.",
             "Report_Short_Description__c": "Skateboard cold-pressed brunch, polaroid hexagon everyday carry DIY taxidermy lomo vibecession gochujang DSA mukbang yuccie.",
@@ -18,7 +18,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef2"
             },
-            "Advancement_Report_Name__c": "Major Gift Prospects",
+            "Item_Name__c": "Major Gift Prospects",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric \"outside the box\" thinking. Completely pursue scalable customer service through sustainable potentialities.",
             "Report_Short_Description__c": "Meh edison bulb narwhal tattooed, direct trade selfies trust fund twee fingerstache taxidermy cornhole.",
@@ -31,7 +31,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef3"
             },
-            "Advancement_Report_Name__c": "Year-End Cat Nap Summary",
+            "Item_Name__c": "Year-End Cat Nap Summary",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.",
             "Report_Short_Description__c": "Brooklyn vice lumbersexual organic hot chicken, selfies big mood affogato.",
@@ -44,7 +44,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef4"
             },
-            "Advancement_Report_Name__c": "Fundraiser metrics",
+            "Item_Name__c": "Fundraiser metrics",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.",
             "Report_Short_Description__c": "Prism bespoke chillwave, ascot skateboard keffiyeh sartorial hexagon glossier umami taiyaki tumeric poutine cardigan.",
@@ -57,7 +57,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef5"
             },
-            "Advancement_Report_Name__c": "Prospect List",
+            "Item_Name__c": "Prospect List",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
             "Report_Short_Description__c": "Kickstarter locavore craft beer umami jianbing pitchfork woke wayfarers mixtape, cliche salvia man bun jean shorts.",
@@ -70,7 +70,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef6"
             },
-            "Advancement_Report_Name__c": "Scholarship Designation Report",
+            "Item_Name__c": "Scholarship Designation Report",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products.",
             "Report_Short_Description__c": "Woke keffiyeh craft beer Brooklyn selfies DSA scenester chicharrones synth banh mi.",
@@ -83,7 +83,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef7"
             },
-            "Advancement_Report_Name__c": "Opportunity Team Summary Metrics",
+            "Item_Name__c": "Opportunity Team Summary Metrics",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.",
             "Report_Short_Description__c": "Austin gochujang raw denim offal meh blog. Distillery tousled pinterest keytar.",
@@ -96,7 +96,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef8"
             },
-            "Advancement_Report_Name__c": "Fundraiser Goals Report",
+            "Item_Name__c": "Fundraiser Goals Report",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.",
             "Report_Short_Description__c": "I'm baby retro iceland ennui etsy wolf, tousled salvia leggings cold-pressed roof party heirloom.",
@@ -109,7 +109,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef9"
             },
-            "Advancement_Report_Name__c": "LYBUNT Area Report",
+            "Item_Name__c": "LYBUNT Area Report",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.",
             "Report_Short_Description__c": "Crucifix irony narwhal, drinking vinegar farm-to-table messenger bag umami everyday carry semiotics prism health goth +1 tofu austin.",
@@ -122,7 +122,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef10"
             },
-            "Advancement_Report_Name__c": "New Graduates",
+            "Item_Name__c": "New Graduates",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.",
             "Report_Short_Description__c": "Vice selfies locavore, try-hard meggings beard live-edge scenester poke crucifix glossier la croix pok pok pabst.",
@@ -135,7 +135,7 @@
                 "type": "Report_Finder_Item__c",
                 "referenceId": "Report_Finder_Item__cRef11"
             },
-            "Advancement_Report_Name__c": "New Hire Information",
+            "Item_Name__c": "New Hire Information",
             "Publish_Status__c": "Published",
             "Report_Description__c": "Collaboratively administrate turnkey channels whereas virtual e-tailers. Objectively seize scalable metrics whereas proactive e-services. Seamlessly empower fully researched growth strategies and interoperable internal or \"organic\" sources.",
             "Report_Short_Description__c": "Mukbang wolf kickstarter VHS tacos. DIY subway tile squid tbh, iPhone gluten-free bitters.",

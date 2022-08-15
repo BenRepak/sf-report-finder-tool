@@ -39,7 +39,7 @@ public with sharing class ReportFinderController {
 
         public ReportInfo(Report_Finder_Item__c item){
             this.id = item.Id;
-            this.name = item.Advancement_Report_Name__c;
+            this.name = item.Item_Name__c;
             this.thumbnail = item.Thumbnail_URL__c;
             this.longDescription = item.Report_Description__c;
             this.shortDescription = item.Report_Short_Description__c + ' Click to learn more.';
@@ -68,7 +68,7 @@ public with sharing class ReportFinderController {
             if (!String.isEmpty(filters.searchKey)) {
                 String cleansedKey = String.escapeSingleQuotes(filters.searchKey);
                 key = '%' + filters.searchKey + '%';
-                criteria.add('(Advancement_Report_Name__c LIKE : key OR Report_Short_Description__c LIKE : key)');
+                criteria.add('(Item_Name__c LIKE : key OR Report_Short_Description__c LIKE : key)');
             }
            
             if (filters.jobFunctions != null && filters.jobFunctions.size() > 0) {
@@ -105,13 +105,13 @@ public with sharing class ReportFinderController {
         
 
         
-        string queryString =    'SELECT Id, Advancement_Report_Name__c,Thumbnail_URL__c, Name, Report_Description__c,Report_Short_Description__c, Type__c, Publish_Status__c, Report_URL__c ' + 
+        string queryString =    'SELECT Id, Item_Name__c,Thumbnail_URL__c, Name, Report_Description__c,Report_Short_Description__c, Type__c, Publish_Status__c, Report_URL__c ' + 
             ',(SELECT Id, Name FROM Report_Finder_User_Bookmarks__r WHERE Bookmarked_By__c = : currentUser) ' + 
             ' FROM Report_Finder_Item__c ' +
             
             whereClause + 
             ' WITH SECURITY_ENFORCED' +
-            ' ORDER BY Advancement_Report_Name__c LIMIT :pageSize OFFSET :offset';
+            ' ORDER BY Item_Name__c LIMIT :pageSize OFFSET :offset';
 
             result.totalItemCount = Database.countQuery('SELECT count() FROM Report_Finder_Item__c ' + whereClause);
 

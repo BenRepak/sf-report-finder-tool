@@ -36,7 +36,7 @@ public without sharing class ReportBookmarkController {
         }
 
 
-       Report_Finder_Item__c item =  [SELECT Id, Advancement_Report_Name__c,Thumbnail_URL__c, Name, Report_Description__c,Report_Short_Description__c, Type__c, Publish_Status__c, Report_URL__c, (SELECT Id, Name FROM Report_Finder_User_Bookmarks__r WHERE Bookmarked_By__c = : currentUser) FROM Report_Finder_Item__c WHERE Id = :reportId];
+       Report_Finder_Item__c item =  [SELECT Id,Item_Name__c, Thumbnail_URL__c, Name, Report_Description__c,Report_Short_Description__c, Type__c, Publish_Status__c, Report_URL__c, (SELECT Id, Name FROM Report_Finder_User_Bookmarks__r WHERE Bookmarked_By__c = : currentUser) FROM Report_Finder_Item__c WHERE Id = :reportId];
        ReportFinderController.ReportInfo report = new ReportFinderController.ReportInfo(item);
 
       return report;

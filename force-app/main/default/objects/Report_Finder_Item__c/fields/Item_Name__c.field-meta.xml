@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Advancement_Report_Name__c</fullName>
+    <fullName>Item_Name__c</fullName>
     <caseSensitive>false</caseSensitive>
     <externalId>false</externalId>
-    <label>Advancement Report Name</label>
+    <label>Item Name</label>
     <length>255</length>
     <required>true</required>
     <trackHistory>false</trackHistory>

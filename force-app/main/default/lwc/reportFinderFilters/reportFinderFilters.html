@@ -15,27 +15,28 @@
             </lightning-accordion-section>
 
             <!-- job function filters -->
-            <template if:true={optionsUser}>
+            <template if:true={optionsUser.length}>
                 <lightning-accordion-section name="job_function_filters" label="Job Function">
-
                     <lightning-checkbox-group name="Checkbox Group" options={optionsUser} value={valueJobFunction}
                         onchange={handleChangeJobFunction}></lightning-checkbox-group>
                 </lightning-accordion-section>
             </template>
 
-
             <!-- report purpose filters -->
-            <lightning-accordion-section name="report_purpose_filters" label="Purpose">
-                <p>TESTING --> This is not currently functional</p>
-                <lightning-checkbox-group name="Checkbox Group" options={optionsCategory} value={valueCategory}
-                    onchange={handleChangeCategory}></lightning-checkbox-group>
-            </lightning-accordion-section>
+            <template if:true={optionsCategory.length}>
+                <lightning-accordion-section name="report_purpose_filters" label="Purpose">
+                    <lightning-checkbox-group name="Checkbox Group" options={optionsCategory} value={valueCategory}
+                        onchange={handleChangeCategory}></lightning-checkbox-group>
+                </lightning-accordion-section>
+            </template>
 
             <!-- report type filters -->
+            <template if:true={optionsType.length}>
             <lightning-accordion-section name="report_format_filters" label="Format">
                 <lightning-checkbox-group name="Checkbox Group" options={optionsType} value={valueType}
                     onchange={handleChangeType}></lightning-checkbox-group>
             </lightning-accordion-section>
+            </template>
         </lightning-accordion>
         <!-- accordion end -->
 

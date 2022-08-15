@@ -1,6 +1,8 @@
 import { LightningElement } from 'lwc';
 import getJobFunctions from '@salesforce/apex/ReportFinderController.getJobFunctions';
 import getReportTypes from '@salesforce/apex/ReportFinderController.getReportTypes';
+import getCategories from '@salesforce/apex/ReportFinderController.getCategories';
+
 
 // The delay used when debouncing event handlers before firing the event
 const DELAY = 350;
@@ -16,13 +18,40 @@ export default class ReportFinderFilters extends LightningElement {
 
     optionsUser = [];
     optionsType = [];
+    optionsCategory = [];
 
     filters = {};
     
     connectedCallback() {
         this.getOptionsUser();
         this.getOptionsType();
+        this.getOptionsCategory();
     }
+
+    getOptionsCategory() {
+        console.log('getCategories');
+        let options = [];
+        getCategories()
+            .then((result) => {
+            if (result) {
+                console.log('getCategories result' + JSON.stringify(result));
+                result.forEach(r => {
+                options.push({
+                    label: r,
+                    value: r,
+                });
+                });
+            }
+            console.log('getCategories options' + JSON.stringify(options));
+            this.optionsCategory =  options;
+
+            })
+            .catch((error) => {
+            // handle Error
+            console.log('error');
+            });
+    }
+
 
     getOptionsType() {
         console.log('getOptionsType');
@@ -83,12 +112,12 @@ export default class ReportFinderFilters extends LightningElement {
     //     ];
     // }
 
-    get optionsCategory() {
-        return [
-            { label: 'Mass Contact', value: 'mass contact' },
-            { label: 'Prospecting', value: 'prospecting' },
-        ];
-    }
+    // get optionsCategory() {
+    //     return [
+    //         { label: 'Mass Contact', value: 'mass contact' },
+    //         { label: 'Prospecting', value: 'prospecting' },
+    //     ];
+    // }
 
     handleChangeJobFunction(e) {
         console.log('handleChangeJobFunction');
@@ -126,6 +155,7 @@ export default class ReportFinderFilters extends LightningElement {
         this.filters.jobFunctions = this.valueJobFunction;
         this.filters.bookmarksOnly = this.bookmarksOnly;
         this.filters.type = this.valueType;
+        this.filters.categories = this.valueCategory;
        // this.filters.userRoles = this.valueJobFunction;
         console.log('this.filters --> ' + JSON.stringify(this.filters));
     }

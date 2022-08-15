@@ -1,10 +1,10 @@
 [
     {
-        "sobject": "Advancement_Report__c",
+        "sobject": "Report_Finder_Item__c",
         "saveRefs": true,
         "resolveRefs": false,
         "files": [
-            "Advancement_Report__cs.json"
+            "Report_Finder_Item__cs.json"
         ]
     },
     {

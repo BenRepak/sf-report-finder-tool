@@ -14,7 +14,7 @@ cd sf-report-finder-tool
 ```
 3. Create a scratch org and set an alias: 
 ```
-sfdx force:org:create -s -f config/project-scratch-def.json -a report-finder
+sfdx force:org:create -s -f config/project-scratch-def.json -a report-finder2
 ```
 4. Push source code to the scratch org:
 ```
@@ -22,7 +22,7 @@ sfdx force:source:push
 ```
 5. Assign the app manager permission set to the default user:
 ```
-sfdx force:user:permset:assign -n Advancement_Report_Finder_App_Manager
+sfdx force:user:permset:assign -n Report_Finder_App_Manager
 ```
 6. Import sample data to the Advancement_Report__c, Report_Finder_Job_Function__c, and Report_Finder_Job_Function_Filter__c objects:
 ```

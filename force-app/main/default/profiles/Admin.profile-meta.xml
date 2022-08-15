@@ -34,6 +34,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Report_Finder_Category__c.Category_Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Report_Finder_Category__c.Is_Active__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Report_Finder_Job_Function__c.Is_Active__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Report_Finder_Job_Function__c.Job_Function_Description__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -44,6 +59,9 @@
     </fieldPermissions>
     <layoutAssignments>
         <layout>Advancement_Report__c-Advancement Report Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Report_Finder_Category__c-Report Finder Category Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Report_Finder_Job_Function_Filter__c-Report Finder Job Function Filter Layout</layout>
@@ -61,6 +79,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Advancement_Report__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Report_Finder_Category__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -96,6 +123,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Advancement_Report__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Report_Finder_Category__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

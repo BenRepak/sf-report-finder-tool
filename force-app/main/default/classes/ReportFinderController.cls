@@ -38,6 +38,10 @@ public with sharing class ReportFinderController {
         public String[] jobFunctions { get; set; }
         @AuraEnabled
         public String[] categories { get; set; }
+        @AuraEnabled
+        public Boolean isNew { get; set; }
+        @AuraEnabled
+        public Boolean isRecentlyModified { get; set; }
 
         public ReportInfo(){
 

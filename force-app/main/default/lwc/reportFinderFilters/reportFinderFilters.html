@@ -5,7 +5,7 @@
         <lightning-accordion class="example-accordion" allow-multiple-sections-open active-section-name="popular_report_filters">
             <!-- popular filters -->
             <lightning-accordion-section name="popular_report_filters" label="Popular Report Filters">
-                <lightning-input type="search" placeholder="search by report name" onchange={handleSearchKeyChange}
+                <lightning-input type="search" placeholder="search name or description" onchange={handleSearchKeyChange}
                     value={searchKey}></lightning-input>
                 <div class="slds-m-top_medium">
                     <lightning-input type="checkbox" label="My Bookmarked Reports" name="bookmarksToggle"

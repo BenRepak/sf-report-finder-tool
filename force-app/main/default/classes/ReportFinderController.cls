@@ -66,8 +66,9 @@ public with sharing class ReportFinderController {
         Id currentUser = UserInfo.getUserId();
         if (filters != null) {
             if (!String.isEmpty(filters.searchKey)) {
+                String cleansedKey = String.escapeSingleQuotes(filters.searchKey);
                 key = '%' + filters.searchKey + '%';
-                criteria.add('Advancement_Report_Name__c LIKE :key');
+                criteria.add('(Advancement_Report_Name__c LIKE : key OR Report_Short_Description__c LIKE : key)');
             }
            
             if (filters.jobFunctions != null && filters.jobFunctions.size() > 0) {

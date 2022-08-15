@@ -79,13 +79,25 @@
     <relatedLists>
         <fields>NAME</fields>
         <fields>Report_Finder_Job_Function__c.Job_Function_Name__c</fields>
-        <fields>CREATEDBY_USER</fields>
+        <fields>Report_Finder_Job_Function__c.Is_Active__c</fields>
+        <fields>UPDATEDBY_USER.ALIAS</fields>
+        <fields>LAST_UPDATE</fields>
         <relatedList>Report_Finder_Job_Function_Filter__c.Advancement_Report__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Report_Finder_Category__c.Category_Name__c</fields>
+        <fields>Report_Finder_Category__c.Is_Active__c</fields>
+        <fields>User.LAST_UPDATE_BY</fields>
+        <fields>Report_Finder_Category__c.LAST_UPDATE</fields>
+        <relatedList>Report_Finder_Job_Category_Filter__c.Report__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <fields>Bookmarked_By__c</fields>
         <fields>CREATED_DATE</fields>
+        <fields>UPDATEDBY_USER</fields>
+        <fields>LAST_UPDATE</fields>
         <relatedList>Report_Finder_User_Bookmark__c.Advancement_Report__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -100,7 +112,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h11000007ndzp</masterLabel>
+        <masterLabel>00h1h0000044ijt</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

@@ -8,6 +8,8 @@ public with sharing class ReportFinderController {
         @AuraEnabled
         public String[] jobFunctions { get; set; }
         @AuraEnabled
+        public String[] categories { get; set; }
+        @AuraEnabled
         public String[] type { get; set; }
         @AuraEnabled
         public Boolean bookmarksOnly { get; set; }
@@ -62,7 +64,7 @@ public with sharing class ReportFinderController {
 
         List<ReportInfo> reports = new List<ReportInfo>();
         String key, whereClause = '';
-        String[] jobFunctions, type, criteria = new List<String>{};
+        String[] jobFunctions, type,categories, criteria = new List<String>{};
         Id currentUser = UserInfo.getUserId();
         if (filters != null) {
             if (!String.isEmpty(filters.searchKey)) {
@@ -70,16 +72,26 @@ public with sharing class ReportFinderController {
                 key = '%' + filters.searchKey + '%';
                 criteria.add('(Item_Name__c LIKE : key OR Short_Description__c LIKE : key)');
             }
-           
+            
+            // job function filters
             if (filters.jobFunctions != null && filters.jobFunctions.size() > 0) {
                 jobFunctions = filters.jobFunctions;
                 criteria.add('Id IN (SELECT Report_Finder_Item__c FROM Report_Finder_Job_Function_Filter__c WHERE Job_Function__r.Job_Function_Name__c IN :jobFunctions)');
             }
 
+            // type filters
             if (filters.type != null && filters.type.size() > 0) {
                 type = filters.type;
                 criteria.add('Type__c = :type');
             }
+
+            // category / purpose filters
+            if (filters.categories != null && filters.categories.size() > 0) {
+                categories = filters.categories;
+                system.debug('categories --> ' + categories);
+                criteria.add('Id IN (SELECT Report_Finder_Item__c FROM Report_Finder_Category_Filter__c WHERE Report_Finder_Category__r.Category_Name__c IN :categories)');
+            }
+
 
             // bookmarks only
             if(filters.bookmarksOnly == true){

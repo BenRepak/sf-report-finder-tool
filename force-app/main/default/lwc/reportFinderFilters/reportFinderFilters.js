@@ -132,6 +132,8 @@ export default class ReportFinderFilters extends LightningElement {
     }
     handleChangeCategory(e) {
         this.valueCategory = e.detail.value;
+        this.buildFilters();
+        this.fireFilterChangeEvent();  
     }
 
     handleSearchKeyChange(e) {

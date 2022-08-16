@@ -128,11 +128,14 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Report_Finder_Category_Default_LRP</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -158,13 +161,14 @@
     <nameField>
         <displayFormat>RFC-{0}</displayFormat>
         <label>Report Finder Category #</label>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Report Finder Categories</pluralLabel>
     <searchLayouts>
         <searchResultsAdditionalFields>Category_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Is_Active__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Category_Description__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

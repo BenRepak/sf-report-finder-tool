@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Access URL</label>
     <required>true</required>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Url</type>
 </CustomField>

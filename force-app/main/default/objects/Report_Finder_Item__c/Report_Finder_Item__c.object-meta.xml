@@ -147,7 +147,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Report_Finder_Item_Default_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>These records hold details about reports, including filters, tags, and types.</description>
     <enableActivities>false</enableActivities>
@@ -164,7 +164,7 @@
     <nameField>
         <displayFormat>RFI-{0}</displayFormat>
         <label>Report Finder Item #</label>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Report Finder Items</pluralLabel>
@@ -174,6 +174,8 @@
         <searchResultsAdditionalFields>Long_Description__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Publish_Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Access_URL__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <startsWith>Vowel</startsWith>

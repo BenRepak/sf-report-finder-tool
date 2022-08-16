@@ -161,7 +161,7 @@
     <nameField>
         <displayFormat>RFJF-{0}</displayFormat>
         <label>Job Function #</label>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Report Finder Job Functions</pluralLabel>

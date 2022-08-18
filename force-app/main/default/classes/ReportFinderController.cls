@@ -65,7 +65,12 @@ public with sharing class ReportFinderController {
     @AuraEnabled
     public static PagedResult refreshReports(Filters filters, Integer pageNumber) {
         return getReports(filters, pageNumber);
-    }
+    } 
+    
+    // @AuraEnabled
+    // public static PagedResult loadMoreReports(Filters filters, Integer pageNumber) {
+    //     return getReports(filters, pageNumber);
+    // }
 
 
     @AuraEnabled(cacheable=true)

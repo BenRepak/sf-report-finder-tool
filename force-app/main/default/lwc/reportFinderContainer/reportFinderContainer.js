@@ -11,6 +11,24 @@ export default class ReportFinderContainer extends LightningElement {
     @api isLoaded = false;
 
 
+    tableViewState = false;
+
+    tileViewState = true;
+
+
+
+    viewAsTable(){
+        this.tableViewState = true;
+        this.tileViewState = false;
+    }
+
+    viewAsCards(){
+        this.tableViewState = false;
+        this.tileViewState = true;  
+    }
+    
+
+
     /** Current page in the product list. */
     pageNumber = 1;
     
@@ -29,11 +47,64 @@ export default class ReportFinderContainer extends LightningElement {
     selectedReport;
 
     delayTimeout;
+
+    
     
 
     connectedCallback(){
         console.log('connectedCallback');
         this.updateReports();
+    }
+
+
+    handleLoadMore(event){
+        const currentReports = event.detail.reports;
+        
+        console.log('handleLoadMore in reportFinderContainer');
+        console.log('JSON.stringify(event) --> ' + JSON.stringify(event));
+        this.selectedReport = undefined;
+        this.showSpinner();
+        this.pageNumber = this.pageNumber + 1;
+
+        refreshReports({filters: this.filters, pageNumber: this.pageNumber }) 
+          .then(result => {
+              // console.log('update result --> ' + JSON.stringify(result));
+                const newData = result;
+                let currentReports = this.reports;
+                console.log('currentReports --> ' + JSON.stringify(currentReports));
+                console.log('currentReports.length --> ' + currentReports.records.length);
+
+                console.log('newData --> ' + JSON.stringify(newData));
+                console.log('newData.length --> ' + newData.records.length);
+
+                let allData = {};
+
+                const allRecords = currentReports.records.concat(newData.records);
+
+                newData['records'] = allRecords;
+                allData = newData;
+
+                console.log('allData --> ' + JSON.stringify(allData));
+                console.log('allData.length --> ' + allData.records.length);
+
+                this.reports = allData;
+                this.error = undefined;
+                console.log('refreshReports2');
+
+                this.hideSpinner();
+          })
+          .catch(error => {
+            console.log('error');
+            console.log(error);
+            this.error = JSON.stringify(error);
+            this.reports = undefined;
+            this.hideSpinner();
+
+          });
+        
+
+        
+
     }
 
 

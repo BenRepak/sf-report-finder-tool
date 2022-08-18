@@ -14,7 +14,7 @@ cd sf-report-finder-tool
 ```
 3. Create a scratch org and set an alias: 
 ```
-sfdx force:org:create -s -f config/project-scratch-def.json -a report-finder2
+sfdx force:org:create -s -f config/project-scratch-def.json -a report-finder3
 ```
 4. Push source code to the scratch org:
 ```
@@ -28,8 +28,56 @@ sfdx force:user:permset:assign -n Report_Finder_App_Manager
 ```
 sfdx force:data:tree:import -p ./data/Sample_Data_Import_Plan.json
 ```
-7. Open the org and launch the Sales app:
+7. Open the org and launch the default org:
 ```
 sfdx force:org:open
 ```
+8. Once the oefault org is open in your browser, use the App Launcher to open the **Report Finder App**
 
+
+## Granting User Access
+### App User Access
+To grant access to App users, grant access using the **Report Finder** App User permission set.
+
+### App Manager Access
+To grant access to App managers (aka Admins or Super users), grant access using the **Report Finder App Manager** permission set. This will grant **Modify All** rights to the following objects:
+- Report_Finder_Category__c
+- Report_Finder_Category_Filter__c
+- Report_Finder_Item__c
+- Report_Finder_Item_Usage__c
+- Report_Finder_Job_Function__c
+- Report_Finder_Job_Function_Filter__c
+- Report_Finder_User_Bookmark__c
+
+
+## Sharing Model
+All objects are defaulted to Public Read or Controlled by Parent.
+
+## App Metadata
+The following describe the most important metadata items within the Report Finder App.
+
+# Object Definitions 
+Object API Name | Object Usage
+----------------|----------------
+Report_Finder_Category__c | Used for classifying / tagging Report Finder Items.
+Report_Finder_Category_Filter__c | Junction object between Report_Finder_Category__c and Report_Finder_Item__c.
+Report_Finder_Item__c | Main object of the app to hold descriptive information about the report items.
+Report_Finder_Item_Usage__c | Logs when Users launch an Access URL from a Report Finder Item. Junction object between Report_Finder_Item__c and User.
+Report_Finder_Job_Function__c | Used for classifying / tagging Report Finder Items by end-user job type (e.g. Accountant, Sales Manager, etc). Is not tied to Profiles or User Roles. 
+Report_Finder_Job_Function_Filter__c | Junction object between Report_Finder_Job_Function__c and Report_Finder_Item_Usage__c.
+Report_Finder_User_Bookmark__c | Used to bookmark Report Finder Item records for end-users. Junction object between Report_Finder_Item__c and User.
+
+
+
+# Lightning Web Components  
+<<pending>>
+
+
+# Apex Classes 
+<<pending>>
+
+# Dashboard
+<<pending>>
+
+# Report
+<<pending>>

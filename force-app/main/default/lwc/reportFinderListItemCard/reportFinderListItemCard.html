@@ -18,7 +18,7 @@
                     <c-report-finder-bookmarker report={report} onchangebookmark={handleBookmarkChange}
                         class="slds-float_left"></c-report-finder-bookmarker>
                     <a class="slds-button slds-button_neutral slds-float_right" href={reportUrl} target="_blank"
-                        title="Open the linked report" icon-name="utility:new_window">
+                        title="Open the linked report" icon-name="utility:new_window" onclick={handleReportOpen}>
                         <lightning-icon icon-name="utility:new_window" alternative-text="Open Report"
                             title="Open Report" size="x-small" class="slds-m-right_medium">
                         </lightning-icon>Open

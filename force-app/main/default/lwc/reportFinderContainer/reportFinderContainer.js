@@ -1,6 +1,7 @@
 import { LightningElement, api } from 'lwc';
 import refreshReports from '@salesforce/apex/ReportFinderController.refreshReports';
-import updateBookmark from '@salesforce/apex/ReportBookmarkController.updateBookmark';
+import updateBookmark from '@salesforce/apex/ReportBookmarkController.updateBookmark'; 
+import logItemUsage from '@salesforce/apex/ReportFinderUsageController.logItemUsage'; 
 
 
 const DELAY = 350;
@@ -128,6 +129,22 @@ export default class ReportFinderContainer extends LightningElement {
                console.log('error --> ' + JSON.stringify(error));
                console.log('error --> ' + error);
             });
+    }
+
+
+    handleReportOpen(event){
+        console.log('handleReportOpen in container');
+        console.log(JSON.stringify(event.detail));
+        let reportId = event.detail.report.id;
+        logItemUsage({reportId : reportId }) 
+            .then(result => {
+                console.log('sucessfully loged report open');
+            })
+            .catch(error => {
+               console.log('error --> ' + JSON.stringify(error));
+               console.log('error --> ' + error);
+            });
+        
     }
 
 

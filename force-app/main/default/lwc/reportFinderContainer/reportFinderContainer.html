@@ -9,7 +9,7 @@
 
         </div>
         <div class="">
-            <c-report-finder-selected-item-modal report={selectedReport} onchangebookmark={handleBookmarkChange}>
+            <c-report-finder-selected-item-modal report={selectedReport} onchangebookmark={handleBookmarkChange} onopenreport={handleReportOpen}>
             </c-report-finder-selected-item-modal>
         </div>
         <div if:false={isLoaded}>

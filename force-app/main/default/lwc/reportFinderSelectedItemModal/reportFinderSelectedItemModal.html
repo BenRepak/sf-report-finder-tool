@@ -12,7 +12,7 @@
         <!------Body Section-->
         <div class="slds-modal__content slds-p-around_medium modalBody">
           <center>
-            <c-report-finder-list-item-card report={report} onchangebookmark={handleBookmarkChange}>
+            <c-report-finder-list-item-card report={report} onchangebookmark={handleBookmarkChange} onopenreport={handleReportOpen}>
             </c-report-finder-list-item-card>
           </center>
           <div if:false={isLoaded}>

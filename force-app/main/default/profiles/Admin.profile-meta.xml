@@ -18,6 +18,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ReportFinderUsageController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ReportThumbnailController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -30,6 +34,26 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Report_Finder_Category__c.Is_Active__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Report_Finder_Item_Usage__c.Accessed_By__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Report_Finder_Item_Usage__c.Accessed_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Report_Finder_Item__c.Item_Usage_Count__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Report_Finder_Item__c.Items_Bookmarked_Count__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -64,6 +88,9 @@
         <layout>Report_Finder_Category__c-Report Finder Category Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Report_Finder_Item_Usage__c-Report Finder Item Usage Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Report_Finder_Item__c-Report Finder Item Detail</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -91,6 +118,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Report_Finder_Category__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Report_Finder_Item_Usage__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

@@ -29,6 +29,13 @@ export default class ReportFinderSelectedItemModal extends LightningElement {
 
     }
 
+    handleReportOpen(event){
+        console.log('handleReportOpen in itemModal');
+        console.log(JSON.stringify(event.detail));
+        const openReportEvent = new CustomEvent('openreport', {detail : event.detail});
+        this.dispatchEvent(openReportEvent);
+    }
+
     @api
     closeSpinner(){
         this.isLoaded = true;

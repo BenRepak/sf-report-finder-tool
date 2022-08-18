@@ -44,4 +44,11 @@ export default class ReportFinderListItemCard extends LightningElement {
         const updatedBookmarkEvent = new CustomEvent('changebookmark', {detail : event.detail});
         this.dispatchEvent(updatedBookmarkEvent);
     }
+
+
+    handleReportOpen(){
+        console.log('handleReportOpen in listItemCard');
+        const openReportEvent = new CustomEvent('openreport', {detail: {report : this.report}});
+        this.dispatchEvent(openReportEvent);
+    }
 }

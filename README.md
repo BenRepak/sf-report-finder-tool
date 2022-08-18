@@ -33,7 +33,9 @@ sfdx force:data:tree:import -p ./data/Sample_Data_Import_Plan.json
 sfdx force:org:open
 ```
 8. Once the oefault org is open in your browser, use the App Launcher to open the **Report Finder App**
-s
+<img src="documentation-assets\launch_report_finder_app.png" alt="open the Report Finder App from App Launcher" title="Report Finder App" />
+
+
 
 ## Granting User Access
 ### App User Access

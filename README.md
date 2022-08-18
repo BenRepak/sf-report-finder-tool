@@ -33,7 +33,7 @@ sfdx force:data:tree:import -p ./data/Sample_Data_Import_Plan.json
 sfdx force:org:open
 ```
 8. Once the oefault org is open in your browser, use the App Launcher to open the **Report Finder App**
-
+s
 
 ## Granting User Access
 ### App User Access
@@ -49,14 +49,13 @@ To grant access to App managers (aka Admins or Super users), grant access using 
 - Report_Finder_Job_Function_Filter__c
 - Report_Finder_User_Bookmark__c
 
-
 ## Sharing Model
 All objects are defaulted to Public Read or Controlled by Parent.
 
 ## App Metadata
 The following describe the most important metadata items within the Report Finder App.
 
-# Object Definitions 
+### Object Definitions 
 Object API Name | Object Usage
 ----------------|----------------
 Report_Finder_Category__c | Used for classifying / tagging Report Finder Items.
@@ -67,17 +66,14 @@ Report_Finder_Job_Function__c | Used for classifying / tagging Report Finder Ite
 Report_Finder_Job_Function_Filter__c | Junction object between Report_Finder_Job_Function__c and Report_Finder_Item_Usage__c.
 Report_Finder_User_Bookmark__c | Used to bookmark Report Finder Item records for end-users. Junction object between Report_Finder_Item__c and User.
 
+### Lightning Web Components  
+Pending
 
+### Apex Classes 
+Pending
 
-# Lightning Web Components  
-<<pending>>
+### Dashboard
+Pending
 
-
-# Apex Classes 
-<<pending>>
-
-# Dashboard
-<<pending>>
-
-# Report
-<<pending>>
+### Reports
+Pending

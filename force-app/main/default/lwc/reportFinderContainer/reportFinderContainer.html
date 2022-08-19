@@ -3,52 +3,20 @@
         <div class="slds-col slds-size_3-of-12">
             <c-report-finder-filters onfiltered={filteredEvent}></c-report-finder-filters>
         </div>
+        <div class="slds-col slds-size_9-of-12">
+            <c-report-finder-list reports={reports} onreportselected={selectedEvent} onprevious={handlePreviousPage}
+                onnext={handleNextPage}></c-report-finder-list>
 
-        <div class="slds-col slds-size_9-of-12" if:true={reports}>
-            <div class="slds-card slds-var-p-around_x-small ">
-                <div class="slds-grid">
-                <div class="slds-col slds-size_2-of-12">
-                    <p class="slds-text-heading_medium">Available Reports</p>
-                </div>
-                <div class="slds-col slds-size_8-of-12 slds-text-align_center nav-info">
-                </div>
-                <div class="slds-col slds-size_2-of-12 ">
-                    <lightning-button-icon-stateful icon-name="utility:tile_card_list" selected={tileViewState}
-                        onclick={viewAsCards} alternative-text="view as cards"></lightning-button-icon-stateful>
-                    <lightning-button-icon-stateful icon-name="utility:table" selected={tableViewState}
-                        onclick={viewAsTable} alternative-text="view as datatable"></lightning-button-icon-stateful>
-                    
-                </div>
-            </div>
-
-
-
-
-                <div if:false={tableViewState} class="slds-p-top_medium">
-                    <c-report-finder-list reports={reports} onreportselected={selectedEvent}
-                        onprevious={handlePreviousPage} onnext={handleNextPage}></c-report-finder-list>
-                </div>
-                <div if:true={tableViewState} class="slds-p-top_medium">
-
-                    <c-report-finder-datatable reports={reports} onreportselected={selectedEvent}
-                        onloadmore={handleLoadMore}></c-report-finder-datatable>
-                </div>
-            </div>
         </div>
         <div class="">
-            <c-report-finder-selected-item-modal report={selectedReport} onchangebookmark={handleBookmarkChange}
-                onopenreport={handleReportOpen}>
+            <c-report-finder-selected-item-modal report={selectedReport} onchangebookmark={handleBookmarkChange} onopenreport={handleReportOpen}>
             </c-report-finder-selected-item-modal>
         </div>
         <div if:false={isLoaded}>
             <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
         </div>
-
-
-
+        
     </div>
 
-
-
-
+   
 </template>

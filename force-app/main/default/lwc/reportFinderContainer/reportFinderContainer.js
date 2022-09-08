@@ -10,6 +10,13 @@ export default class ReportFinderContainer extends LightningElement {
     /** Spinner loading status */
     @api isLoaded = false;
 
+    /** Configure hide/show filters from UI */
+    @api showJobFunctionFilter;
+    @api showPurposeFilter;
+    @api showFormatFilter;
+    @api showBookmarkFilter;
+    @api showSearchByNameFilter;
+
 
     /** Current page in the product list. */
     pageNumber = 1;

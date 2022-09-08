@@ -14,7 +14,7 @@ cd sf-report-finder-tool
 ```
 3. Create a scratch org and set an alias: 
 ```
-sfdx force:org:create -s -f config/project-scratch-def.json -a report-finder3
+sfdx force:org:create -s -f config/project-scratch-def.json -a report-finder
 ```
 4. Push source code to the scratch org:
 ```

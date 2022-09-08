@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
-import getJobFunctions from '@salesforce/apex/ReportFinderController.getJobFunctions';
-import getReportTypes from '@salesforce/apex/ReportFinderController.getReportTypes';
-import getCategories from '@salesforce/apex/ReportFinderController.getCategories';
+import getJobFunctions from '@salesforce/apex/ReportFinderFilterController.getJobFunctions';
+import getReportTypes from '@salesforce/apex/ReportFinderFilterController.getReportTypes';
+import getCategories from '@salesforce/apex/ReportFinderFilterController.getCategories';
 
 
 // The delay used when debouncing event handlers before firing the event

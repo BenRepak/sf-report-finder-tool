@@ -1,0 +1,5 @@
+.thumbnail {
+    height: 250px;
+    pointer-events: none;
+    display: flex;
+}

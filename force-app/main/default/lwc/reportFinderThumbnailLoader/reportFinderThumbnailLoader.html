@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Thumbnail Uploader">
+        <lightning-file-upload label="Upload Thumbnail" name="thumbnailUploader" accept={acceptedFormats}
+            record-id={myRecordId} onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+
+        <template if:true={thumbnail}>
+            <img class="thumbnail" src={thumbnail} alt="Report thumbnail picture" />
+        </template>
+
+
+    </lightning-card>
+</template>

@@ -1,31 +1,58 @@
 public with sharing class ReportThumbnailController {
-    
 
-    @AuraEnabled(cacheable=false)
-    public static string updateReportThumbnail(Id contentDocumentId, Id parentRecordId){
-
-        ContentVersion cv = [select id, title from contentversion where contentdocumentid =:contentDocumentId];
-        
-
-        Report_Finder_Item__c item = new Report_Finder_Item__c();
-        item.id = parentRecordId;
-        item.thumbnail_url__c = '/sfc/servlet.shepherd/version/download/' + cv.id;
-        update item;
-
-         return  item.thumbnail_url__c ;
-    }
+    private static String thumbnailUrl;
     
 
     @AuraEnabled(cacheable=true)
-    public static string getReportThumbnail(Id parentRecordId){
-
-        Report_Finder_Item__c item = new Report_Finder_Item__c();
-        item = [select thumbnail_url__c from Report_Finder_Item__c where Id =:parentRecordId];
-
-        return item.thumbnail_url__c ;
+    public static String getThumbnail(String recordId){
+        system.debug('recordId --> ' + recordId);
+        if(string.isNotBlank(thumbnailUrl)){
+            system.debug('thumbnailURL --> ' + thumbnailUrl);
+            String returnThumbnail = thumbnailUrl;
+            return returnThumbnail;
+        } else {
+            system.debug('else');
+            return [SELECT Thumbnail_URL__c FROM Report_Finder_Item__c WHERE Id =:recordId][0].Thumbnail_URL__c;
+        }
 
     }
 
+  
+     /*
+     */
+    @AuraEnabled
+    public static String updateThumbnail(String contentVersionId, String recordId) {
+        if (contentVersionId == null || recordId == null) { return null; }
+        ContentDistribution  cd = new ContentDistribution();
+        cd.ContentVersionId = contentVersionId;
+        cd.PreferencesAllowViewInBrowser= true;
+        cd.PreferencesLinkLatestVersion=true;
+        cd.PreferencesNotifyOnVisit=false;
+        cd.PreferencesPasswordRequired=false;
+        cd.PreferencesAllowOriginalDownload= true;
+        cd.Name = 'Report Finder Thumbnail - record ' + recordId;
+
+        
+        
+     
+      try {
+        insert cd;
+        system.debug('cd --> ' + cd);
+        thumbnailUrl = [SELECT DistributionPublicUrl FROM ContentDistribution WHERE Id = :cd.Id].DistributionPublicUrl;
+
+        Report_Finder_Item__c rfi = new Report_Finder_Item__c();
+        rfi.Id = recordId;
+        rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/download/'+contentVersionId;
+        update rfi;
+        system.debug('rfi --> ' + rfi);
+
+        return getThumbnail(recordId);
+      } catch(DMLException e) {
+        system.debug('error');
+        System.debug(e.getMessage());
+        return null;
+      }
+    }
 
 
 }

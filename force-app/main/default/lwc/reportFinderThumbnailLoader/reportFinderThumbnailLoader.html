@@ -1,11 +1,14 @@
 <template>
     <lightning-card title="Thumbnail Uploader">
+
         <lightning-file-upload label="Upload Thumbnail" name="thumbnailUploader" accept={acceptedFormats}
-            record-id={myRecordId} onuploadfinished={handleUploadFinished}>
+            record-id={myRecordId} onuploadfinished={handleUploadFinished} class="slds-align_absolute-center">
         </lightning-file-upload>
 
-        <template if:true={thumbnail}>
-            <img class="thumbnail" src={thumbnail} alt="Report thumbnail picture" />
+        <template if:true={report}>
+            <!-- <img class="thumbnail" src={thumbnail} alt="Report thumbnail picture" /> -->
+            <c-report-finder-list-item-thumbnail  class="thumbnail slds-m-top_medium slds-align_absolute-center" report={report}>
+            </c-report-finder-list-item-thumbnail>
         </template>
 
 

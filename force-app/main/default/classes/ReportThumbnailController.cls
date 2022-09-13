@@ -17,6 +17,21 @@ public with sharing class ReportThumbnailController {
 
     }
 
+    @AuraEnabled(cacheable=true)
+    public static ReportFinderController.ReportInfo getReport(String recordId){
+        system.debug('recordId --> ' + recordId);
+
+        Report_Finder_Item__c rfi = new Report_Finder_Item__c();
+        string queryString =    'SELECT Id, Item_Name__c,Thumbnail_URL__c, Name, Long_Description__c,Short_Description__c, Type__c, Publish_Status__c, Access_URL__c ' + 
+        ' FROM Report_Finder_Item__c ' +
+        ' WHERE Id = :recordId';
+        rfi = database.query(queryString);
+        ReportFinderController.ReportInfo report = new ReportFinderController.ReportInfo(rfi);
+        return report;
+        
+
+    }
+
   
      /*
      */

@@ -1,11 +1,15 @@
 import { LightningElement,api,wire } from 'lwc';
 import updateThumbnail from '@salesforce/apex/ReportThumbnailController.updateThumbnail';
-import getThumbnail from '@salesforce/apex/ReportThumbnailController.getThumbnail';
-
+import getThumbnail from '@salesforce/apex/ReportThumbnailController.getThumbnail'; 
+import getReport from '@salesforce/apex/ReportThumbnailController.getReport'; 
 
 export default class ReportFinderThumbnailLoader extends LightningElement {
     @api
     recordId;
+    @api
+    report;
+    @api
+    error;
 
     thumbnail;
 
@@ -14,18 +18,33 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
         return ['.jpeg','.jpg','.png'];
     }
 
-    @wire(getThumbnail, { recordId : '$recordId' })
-    thumbnailPhoto({ data, error }) {
+    // @wire(getThumbnail, { recordId : '$recordId' })
+    // thumbnailPhoto({ data, error }) {
+    //     if (data) {
+    //         console.log('data');
+    //         console.log(data);
+    //         this.thumbnail = data;
+    //     } else if (error) {
+    //         console.log('error');
+    //         console.log(error);
+    //     }
+    // }
+
+    
+    @wire(getReport, { recordId : '$recordId' })
+    wiredReport({ data, error }) {
         if (data) {
             console.log('data');
             console.log(data);
-            this.thumbnail = data;
+            this.report = data;
+            this.error = undefined;
         } else if (error) {
             console.log('error');
             console.log(error);
+            this.error = error;
+            this.report = undefined;
         }
     }
-
 
 
     handleUploadFinished(event) {

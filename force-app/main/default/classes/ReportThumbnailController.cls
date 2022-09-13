@@ -3,19 +3,6 @@ public with sharing class ReportThumbnailController {
     private static String thumbnailUrl;
     
 
-    @AuraEnabled(cacheable=true)
-    public static String getThumbnail(String recordId){
-        system.debug('recordId --> ' + recordId);
-        if(string.isNotBlank(thumbnailUrl)){
-            system.debug('thumbnailURL --> ' + thumbnailUrl);
-            String returnThumbnail = thumbnailUrl;
-            return returnThumbnail;
-        } else {
-            system.debug('else');
-            return [SELECT Thumbnail_URL__c FROM Report_Finder_Item__c WHERE Id =:recordId][0].Thumbnail_URL__c;
-        }
-
-    }
 
     @AuraEnabled(cacheable=true)
     public static ReportFinderController.ReportInfo getReport(String recordId){
@@ -47,9 +34,6 @@ public with sharing class ReportThumbnailController {
         cd.PreferencesAllowOriginalDownload= true;
         cd.Name = 'Report Finder Thumbnail - record ' + recordId;
 
-        
-        
-     
       try {
         insert cd;
         system.debug('cd --> ' + cd);
@@ -61,7 +45,7 @@ public with sharing class ReportThumbnailController {
         update rfi;
         system.debug('rfi --> ' + rfi);
 
-        return getThumbnail(recordId);
+        return '/sfc/servlet.shepherd/version/download/'+contentVersionId;
       } catch(DMLException e) {
         system.debug('error');
         System.debug(e.getMessage());

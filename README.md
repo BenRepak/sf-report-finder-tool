@@ -76,7 +76,8 @@ reportFinderContainer | main LWC to hold other LWCs for this app
 reportFinderDatatable | currently not in use
 reportFinderFilters| Used to drill down the displayed Report Finder Items
 reportFinderList | Holds Report Finder Items returned from search
-reportFinderListItemCard | Holds a single Report Finder Item in the reportFinderList lwc
+reportFinderListItem | Holds a single Report Finder Item in the reportFinderList lwc
+reportFinderListItemCard | Displays report details within the reportFinderSelectedItemModal
 reportFinderListeItemThumbnail | Displays the styled thumbnail for the Report Finder Item in the reportFinderListItemCard and reportFinderThumbnailLoader lwcs
 reportFinderPaginator | Allows users to view additional results when searching for Report Finder Items 
 reportFinderSelectedItemModal | A pop-up modal that displays additional detail about Report Finder Items and enables bookmarking and opening of the items 

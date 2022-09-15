@@ -17,6 +17,10 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
         return ['.jpeg','.jpg','.png'];
     }
 
+    connectedCallback(){
+        this.refreshThumbnail();
+    }
+
     refreshThumbnail(){
         getReport({ recordId : this.recordId })
             .then((result) => {
@@ -36,21 +40,21 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
     }
 
     
-    @wire(getReport, { recordId : '$recordId' })
-    wiredReport({ data, error }) {
-        if (data) {
-            console.log('data');
-            console.log(data);
-            this.report = data;
-            this.error = undefined;
-            console.log('this.report.thumbnail --> ' + this.report.thumbnail);
-        } else if (error) {
-            console.log('error');
-            console.log(error);
-            this.error = error;
-            this.report = undefined;
-        }
-    }
+    // @wire(getReport, { recordId : '$recordId' })
+    // wiredReport({ data, error }) {
+    //     if (data) {
+    //         console.log('data');
+    //         console.log(data);
+    //         this.report = data;
+    //         this.error = undefined;
+    //         console.log('this.report.thumbnail --> ' + this.report.thumbnail);
+    //     } else if (error) {
+    //         console.log('error');
+    //         console.log(error);
+    //         this.error = error;
+    //         this.report = undefined;
+    //     }
+    // }
 
 
     handleUploadFinished(event) {

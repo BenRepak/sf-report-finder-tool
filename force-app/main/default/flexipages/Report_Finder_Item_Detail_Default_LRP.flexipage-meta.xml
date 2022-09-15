@@ -283,6 +283,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>reportFinderThumbnailLoader</componentName>
+                <identifier>c_reportFinderThumbnailLoader</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-4175b4bb-9127-4348-8cdb-ba41c629b53e</value>

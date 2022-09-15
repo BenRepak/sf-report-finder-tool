@@ -6,4 +6,13 @@
     <targets>
         <target>lightning__AppPage</target>
     </targets>
+    <targetConfigs>
+      <targetConfig targets="lightning__AppPage">
+          <property name="showJobFunctionFilter" type="Boolean" />
+          <property name="showPurposeFilter" type="Boolean" />
+          <property name="showFormatFilter" type="Boolean" />
+          <property name="showBookmarkFilter" type="Boolean" />
+          <property name="showSearchByNameFilter" type="Boolean" />
+      </targetConfig>
+  </targetConfigs>
 </LightningComponentBundle>

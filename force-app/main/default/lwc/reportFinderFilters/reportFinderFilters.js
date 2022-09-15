@@ -1,7 +1,7 @@
-import { LightningElement } from 'lwc';
-import getJobFunctions from '@salesforce/apex/ReportFinderController.getJobFunctions';
-import getReportTypes from '@salesforce/apex/ReportFinderController.getReportTypes';
-import getCategories from '@salesforce/apex/ReportFinderController.getCategories';
+import { LightningElement, api } from 'lwc';
+import getJobFunctions from '@salesforce/apex/ReportFinderFilterController.getJobFunctions';
+import getReportTypes from '@salesforce/apex/ReportFinderFilterController.getReportTypes';
+import getCategories from '@salesforce/apex/ReportFinderFilterController.getCategories';
 
 
 // The delay used when debouncing event handlers before firing the event
@@ -9,6 +9,12 @@ const DELAY = 350;
 
 export default class ReportFinderFilters extends LightningElement {
     
+    /** Configure hide/show filters from UI */
+    @api showJobFunctionFilter;
+    @api showPurposeFilter;
+    @api showFormatFilter;
+    @api showBookmarkFilter;
+    @api showSearchByNameFilter;
 
     valueJobFunction = [];
     valueType = [];
@@ -26,6 +32,7 @@ export default class ReportFinderFilters extends LightningElement {
         this.getOptionsUser();
         this.getOptionsType();
         this.getOptionsCategory();
+        console.log('this.showJobFunctionFilter --> ' + this.showJobFunctionFilter);
     }
 
     getOptionsCategory() {

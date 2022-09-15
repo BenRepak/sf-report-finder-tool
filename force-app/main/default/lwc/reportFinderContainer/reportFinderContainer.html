@@ -1,7 +1,14 @@
 <template>
     <div class="slds-grid slds-gutters">
         <div class="slds-col slds-size_3-of-12">
-            <c-report-finder-filters onfiltered={filteredEvent}></c-report-finder-filters>
+            <c-report-finder-filters 
+                onfiltered={filteredEvent}
+                show-job-function-filter = {showJobFunctionFilter}
+                show-purpose-filter = {showPurposeFilter}
+                show-format-filter = {showFormatFilter}
+                show-bookmark-filter = {showBookmarkFilter}
+                show-search-by-name-filter = {showSearchByNameFilter}
+            ></c-report-finder-filters>
         </div>
         <div class="slds-col slds-size_9-of-12">
             <c-report-finder-list reports={reports} onreportselected={selectedEvent} onprevious={handlePreviousPage}

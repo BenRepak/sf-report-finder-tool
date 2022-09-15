@@ -2,21 +2,6 @@ public with sharing class ReportFinderController {
     
     static Integer PAGE_SIZE = 6;
 
-    public class Filters {
-        @AuraEnabled
-        public String searchKey { get; set; }
-        @AuraEnabled
-        public String[] jobFunctions { get; set; }
-        @AuraEnabled
-        public String[] categories { get; set; }
-        @AuraEnabled
-        public String[] type { get; set; }
-        @AuraEnabled
-        public Boolean bookmarksOnly { get; set; }
-    }
-
-
-
     public class ReportInfo {
         @AuraEnabled
         public String id { get; set; }
@@ -63,13 +48,13 @@ public with sharing class ReportFinderController {
     }
 
     @AuraEnabled
-    public static PagedResult refreshReports(Filters filters, Integer pageNumber) {
+    public static PagedResult refreshReports(ReportFinderFilter filters, Integer pageNumber) {
         return getReports(filters, pageNumber);
     }
 
 
     @AuraEnabled(cacheable=true)
-    public static PagedResult getReports(Filters filters, Integer pageNumber) {
+    public static PagedResult getReports(ReportFinderFilter filters, Integer pageNumber) {
         //https://github.com/trailheadapps/ebikes-lwc/blob/main/force-app/main/default/classes/ProductController.cls
 
         List<ReportInfo> reports = new List<ReportInfo>();
@@ -157,45 +142,12 @@ public with sharing class ReportFinderController {
         return result;
 
 
-    
-
 
 
     }
 
 
 
-    @AuraEnabled(cacheable=true)
-    public static List<String> getJobFunctions() {
-        List<String> jobFunctions = new List<String>();
-        for(Report_Finder_Job_Function__c jobFunction : [SELECT Job_Function_Name__c FROM Report_Finder_Job_Function__c WHERE Is_Active__c = TRUE ORDER BY Job_Function_Name__c ASC]){
-            jobFunctions.add(jobFunction.Job_Function_Name__c);
-        }
-        return jobFunctions;
-    }
-
-    @AuraEnabled(cacheable=true)
-    public static List<String> getCategories() {
-        List<String> categories = new List<String>();
-        for(Report_Finder_Category__c category : [SELECT Category_Name__c FROM Report_Finder_Category__c WHERE Is_Active__c = TRUE ORDER BY Category_Name__c ASC]){
-            categories.add(category.Category_Name__c);
-        }
-        return categories;
-    }
-
-
-
-    @AuraEnabled(cacheable=true)
-    public static List<String> getReportTypes() {
-        List<String> reportTypes = new List<String>();
-        Schema.DescribeFieldResult reportTypeFields = Report_Finder_Item__c.Type__c.getDescribe();
-        for(Schema.PicklistEntry fld : reportTypeFields.getPicklistValues()){
-            if(fld.isActive() == true){
-                reportTypes.add(fld.getValue());
-            }   
-        }
-        return reportTypes;
-    }
 
 
 

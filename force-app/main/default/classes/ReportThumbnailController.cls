@@ -4,7 +4,7 @@ public with sharing class ReportThumbnailController {
     
 
 
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled
     public static ReportFinderController.ReportInfo getReport(String recordId){
         system.debug('recordId --> ' + recordId);
 

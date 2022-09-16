@@ -102,3 +102,7 @@ Pending
 
 ### Reports
 Pending
+
+
+## Resources
+- https://www.salesforcebolt.com/2021/11/file-preview-modal-in-lightning-web-component.html

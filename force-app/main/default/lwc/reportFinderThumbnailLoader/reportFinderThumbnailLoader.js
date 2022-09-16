@@ -1,5 +1,7 @@
 import { LightningElement,api,wire } from 'lwc';
 import updateThumbnail from '@salesforce/apex/ReportThumbnailController.updateThumbnail';
+import updateThumbnail2 from '@salesforce/apex/ReportThumbnailController.updateThumbnail2';
+
 import getReport from '@salesforce/apex/ReportThumbnailController.getReport'; 
 
 export default class ReportFinderThumbnailLoader extends LightningElement {
@@ -63,9 +65,16 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
         const uploadedFiles = event.detail.files;
         // alert('File Details : ' + JSON.stringify(uploadedFiles));
         console.log('uploadedFiles --> ' + uploadedFiles);
+        console.log('uploadedFiles --> ' + JSON.stringify(uploadedFiles));
+
         const contentVersionId = uploadedFiles[0].contentVersionId;
+        const contentDocumentId = uploadedFiles[0].documentId;
         console.log('contentVersionId --> ' + contentVersionId);
-        updateThumbnail({contentVersionId : contentVersionId, recordId : this.recordId})
+        console.log('contentDocumentId --> ' + contentDocumentId);
+
+        // updateThumbnail({contentVersionId : contentVersionId, recordId : this.recordId})
+        updateThumbnail2({contentVersionId : contentVersionId, contentDocumentId : contentDocumentId,recordId : this.recordId})
+
         .then((result) => {
             console.log('success');
             

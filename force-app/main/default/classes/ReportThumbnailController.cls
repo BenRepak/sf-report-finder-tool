@@ -21,6 +21,10 @@ public with sharing class ReportThumbnailController {
 
   
      /*
+      "/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=" +
+            this.fileList[i].Id +
+            "&operationContext=CHATTER&contentId=" +
+            this.fileList[i].ContentDocumentId,
      */
     @AuraEnabled
     public static String updateThumbnail(String contentVersionId, String recordId) {
@@ -42,6 +46,8 @@ public with sharing class ReportThumbnailController {
         Report_Finder_Item__c rfi = new Report_Finder_Item__c();
         rfi.Id = recordId;
         rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/download/'+contentVersionId;
+
+  
         update rfi;
         system.debug('rfi --> ' + rfi);
 
@@ -54,6 +60,36 @@ public with sharing class ReportThumbnailController {
     }
 
 
+         /*
+      "/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=" +
+            this.fileList[i].Id +
+            "&operationContext=CHATTER&contentId=" +
+            this.fileList[i].ContentDocumentId,
+     */
+    @AuraEnabled
+    public static String updateThumbnail2(String contentVersionId, String contentDocumentId, String recordId) {
+      if (contentVersionId == null || recordId == null || contentDocumentId == null) { return null; }
+       
+      try {
+       
+        Report_Finder_Item__c rfi = new Report_Finder_Item__c();
+        rfi.Id = recordId;
+        rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' 
+        +  contentVersionId
+        + '&operationContext=CHATTER&contentId='
+        + contentDocumentId;
+  
+        update rfi;
+        system.debug('rfi --> ' + rfi);
+
+        return '/sfc/servlet.shepherd/version/download/'+contentVersionId;
+      } catch(DMLException e) {
+        system.debug('error');
+        System.debug(e.getMessage());
+        return null;
+      }
+    }
+// /sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=0680R000001oWLjQAM&operationContext=CHATTER&contentId=0690R000001oJy7QAE
+
 }
 
-///sfc/servlet.shepherd/version/download/06923000000w8BmAAI

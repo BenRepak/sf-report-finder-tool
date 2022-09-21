@@ -15,7 +15,8 @@ export default class ReportFinderList extends LightningElement {
      /** The total number of items matching the selection. */
      totalItemCount = 0;
 
-    message = 'There are no reports matching your search criteria.'
+    @api
+    message;
 
     /** Url for UU logo. */
     logoUrl = `${REPORT_FINDER_ASSETS}/logo_BlockU_red-800px.png`;

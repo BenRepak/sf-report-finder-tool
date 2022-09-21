@@ -170,6 +170,6 @@
         <searchResultsAdditionalFields>Is_Active__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Category_Description__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Read</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

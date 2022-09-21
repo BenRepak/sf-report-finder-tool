@@ -4,7 +4,7 @@
         <application>Report_Finder_App</application>
         <visible>true</visible>
     </applicationVisibilities>
-    <classAccesses>
+   <classAccesses>
         <apexClass>PagedResult</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -14,6 +14,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ReportFinderController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReportFinderFilter</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReportFinderFilterController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

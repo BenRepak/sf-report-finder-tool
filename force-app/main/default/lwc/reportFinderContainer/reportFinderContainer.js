@@ -17,6 +17,9 @@ export default class ReportFinderContainer extends LightningElement {
     @api showBookmarkFilter;
     @api showSearchByNameFilter;
 
+    /** Message to display when no reports are found when searching */
+    @api noReportsMessage;
+
 
     /** Current page in the product list. */
     pageNumber = 1;

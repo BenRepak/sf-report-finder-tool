@@ -20,6 +20,8 @@
                 </template>
             </lightning-accordion-section>
 
+            <div class="slds-show_small"> 
+
             <!-- job function filters -->
             <template if:true={showJobFunctionFilter}>
                 <template if:true={optionsUser.length}>
@@ -50,11 +52,13 @@
                     </lightning-accordion-section>
                 </template>
             </template>
+        </div>
         </lightning-accordion>
         <!-- accordion end -->
+        
 
         <!-- clear all filters button -->
-        <div>
+        <div class="slds-show_small"> 
             <lightning-button label="Clear All Filters" title="Clear All Filters" onclick={clearFilters}
                 class="slds-m-left_x-small"></lightning-button>
         </div>

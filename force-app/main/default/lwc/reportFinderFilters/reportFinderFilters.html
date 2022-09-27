@@ -24,9 +24,9 @@
 
             <!-- job function filters -->
             <template if:true={showJobFunctionFilter}>
-                <template if:true={optionsUser.length}>
+                <template if:true={optionsJob.length}>
                     <lightning-accordion-section name="job_function_filters" label="Job Function">
-                        <lightning-checkbox-group name="Checkbox Group" options={optionsUser} value={valueJobFunction}
+                        <lightning-checkbox-group name="Checkbox Group" options={optionsJob} value={valueJobFunction}
                             onchange={handleChangeJobFunction}></lightning-checkbox-group>
                     </lightning-accordion-section>
                 </template>

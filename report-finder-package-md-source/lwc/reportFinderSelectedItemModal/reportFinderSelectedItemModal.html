@@ -1,0 +1,29 @@
+<template>
+  <template if:true={openModal}>
+    <div class="slds-modal slds-fade-in-open slds-backdrop">
+      <div class="slds-modal__container">
+        <!------HEADER Section-->
+        <div class="slds-modal__header">
+          <lightning-button-icon icon-name="utility:close" alternative-text="Close this window" size="large"
+            variant="bare-inverse" onclick={closeModal} class="slds-modal__close">
+          </lightning-button-icon>
+        </div>
+        <!------Body Section-->
+        <div class="slds-modal__content slds-p-around_medium modalBody">
+          <center>
+            <c-report-finder-list-item-card report={report} onchangebookmark={handleBookmarkChange} onopenreport={handleReportOpen}>
+            </c-report-finder-list-item-card>
+          </center>
+          <div if:false={isLoaded}>
+            <lightning-spinner alternative-text="Loading..." size="large" class=""></lightning-spinner>
+          </div>
+        </div>
+        <!------Footer Section-->
+        <!-- <div class="slds-modal__footer">
+        </div> -->
+        <!-- end modal footer -->
+      </div>
+
+    </div>
+  </template>
+</template>

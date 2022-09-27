@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>noReportsMessage</name>
+                    <value>There are no reports matching your search criteria. To request a report, please submit a Unite Case using the Advancement Services tab.</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showBookmarkFilter</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showFormatFilter</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showJobFunctionFilter</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showPurposeFilter</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showSearchByNameFilter</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>reportFinderContainer</componentName>
+                <identifier>c_reportFinderContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Report Finder</masterLabel>
+    <template>
+        <name>flexipage:defaultAppHomeTemplate</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

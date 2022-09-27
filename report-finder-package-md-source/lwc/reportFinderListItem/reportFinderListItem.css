@@ -1,0 +1,39 @@
+.content {
+    padding: 8px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    height: 275px;
+    text-align: center;
+    font-size: large;
+}
+
+.content:hover {
+    /* border-style: solid;
+    border-color: #cc0000; */
+    cursor: pointer;
+  }
+
+
+.thumbnail {
+    height: 150px;
+    pointer-events: none;
+    display: flex;
+}
+
+
+.grow {
+    transition: 0.5s ease;
+}
+    
+.grow:hover{
+    background-color: #cc000033;
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
+    transition: 0.5s ease;
+}
+
+
+.help-icon{
+    margin: 0 0 0 90%;
+}

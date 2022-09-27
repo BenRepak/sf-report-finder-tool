@@ -1,0 +1,16 @@
+.content {
+    padding: 8px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    height: auto;
+
+}
+
+.thumbnail {
+    height: 250px;
+    pointer-events: none;
+    display: flex;
+}
+
+
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Report Finder Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Report Finder Items</value>
+    </caseValues>
+    <layouts>
+        <layout>Report Finder Item Detail</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <fields>
+        <label></label>
+        <name>Access_URL__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Item_Name__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Long_Description__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Publish_Status__c</name>
+        <picklistValues>
+            <masterLabel>Not Published</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Published</masterLabel>
+            <translation></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Short_Description__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Thumbnail_URL__c</name>
+    </fields>
+    <fields>
+        <label></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Dashboard</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Report</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce View</masterLabel>
+            <translation></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tableau Dashboard</masterLabel>
+            <translation></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

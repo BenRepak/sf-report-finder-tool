@@ -1,3 +1,9 @@
+/**
+* @author Ben Repak u0884669
+* @date 2022-September
+*
+* @description Controller used in the Report Finder App to update Thumbnail photos 
+*/
 public with sharing class ReportThumbnailController {
 
     private static String thumbnailUrl;
@@ -20,76 +26,28 @@ public with sharing class ReportThumbnailController {
     }
 
   
-     /*
-      "/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=" +
-            this.fileList[i].Id +
-            "&operationContext=CHATTER&contentId=" +
-            this.fileList[i].ContentDocumentId,
-     */
+
     @AuraEnabled
-    public static String updateThumbnail(String contentVersionId, String recordId) {
-        if (contentVersionId == null || recordId == null) { return null; }
-        ContentDistribution  cd = new ContentDistribution();
-        cd.ContentVersionId = contentVersionId;
-        cd.PreferencesAllowViewInBrowser= true;
-        cd.PreferencesLinkLatestVersion=true;
-        cd.PreferencesNotifyOnVisit=false;
-        cd.PreferencesPasswordRequired=false;
-        cd.PreferencesAllowOriginalDownload= true;
-        cd.Name = 'Report Finder Thumbnail - record ' + recordId;
-
-      try {
-        insert cd;
-        system.debug('cd --> ' + cd);
-        thumbnailUrl = [SELECT DistributionPublicUrl FROM ContentDistribution WHERE Id = :cd.Id].DistributionPublicUrl;
-
-        Report_Finder_Item__c rfi = new Report_Finder_Item__c();
-        rfi.Id = recordId;
-        rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/download/'+contentVersionId;
-
-  
-        update rfi;
-        system.debug('rfi --> ' + rfi);
-
-        return '/sfc/servlet.shepherd/version/download/'+contentVersionId;
-      } catch(DMLException e) {
-        system.debug('error');
-        System.debug(e.getMessage());
-        return null;
-      }
-    }
-
-
-         /*
-      "/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=" +
-            this.fileList[i].Id +
-            "&operationContext=CHATTER&contentId=" +
-            this.fileList[i].ContentDocumentId,
-     */
-    @AuraEnabled
-    public static String updateThumbnail2(String contentVersionId, String contentDocumentId, String recordId) {
+    public static String updateThumbnail(String contentVersionId, String contentDocumentId, String recordId) {
       if (contentVersionId == null || recordId == null || contentDocumentId == null) { return null; }
        
       try {
        
         Report_Finder_Item__c rfi = new Report_Finder_Item__c();
         rfi.Id = recordId;
-        rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' 
+        rfi.Thumbnail_Url__c = System.URL.getSalesforceBaseUrl().toExternalForm()+'/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' 
         +  contentVersionId
         + '&operationContext=CHATTER&contentId='
         + contentDocumentId;
-  
         update rfi;
         system.debug('rfi --> ' + rfi);
-
-        return '/sfc/servlet.shepherd/version/download/'+contentVersionId;
+        return rfi.Thumbnail_Url__c;
       } catch(DMLException e) {
         system.debug('error');
         System.debug(e.getMessage());
         return null;
       }
     }
-// /sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=0680R000001oWLjQAM&operationContext=CHATTER&contentId=0690R000001oJy7QAE
 
 }
 

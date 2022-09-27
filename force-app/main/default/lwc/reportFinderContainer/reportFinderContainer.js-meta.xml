@@ -13,6 +13,7 @@
           <property name="showFormatFilter" type="Boolean" />
           <property name="showBookmarkFilter" type="Boolean" />
           <property name="showSearchByNameFilter" type="Boolean" />
+          <property name="noReportsMessage" type="String" required="false" default="There are no reports matching your search criteria."/>
       </targetConfig>
   </targetConfigs>
 </LightningComponentBundle>

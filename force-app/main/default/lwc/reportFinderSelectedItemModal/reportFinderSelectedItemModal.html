@@ -1,5 +1,4 @@
 <template>
-
   <template if:true={openModal}>
     <div class="slds-modal slds-fade-in-open slds-backdrop">
       <div class="slds-modal__container">
@@ -18,24 +17,10 @@
           <div if:false={isLoaded}>
             <lightning-spinner alternative-text="Loading..." size="large" class=""></lightning-spinner>
           </div>
-
         </div>
-
         <!------Footer Section-->
-        <div class="slds-modal__footer">
-          <!-- <div if:true={report.categories.length} class="">
-            <lightning-layout multiple-rows horizontal-align="center">
-              <template for:each={report.categories} for:item="category">
-
-                <lightning-layout-item key={category} padding="around-small" flexibility="auto" size="2">
-                  <lightning-badge label={category} class="slds-badge_inverse" padding="around-small"></lightning-badge>
-
-                </lightning-layout-item>
-              </template>
-
-            </lightning-layout>
-          </div> -->
-        </div>
+        <!-- <div class="slds-modal__footer">
+        </div> -->
         <!-- end modal footer -->
       </div>
 

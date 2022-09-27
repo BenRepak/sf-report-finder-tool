@@ -168,6 +168,6 @@
     <searchLayouts>
         <searchResultsAdditionalFields>Job_Function_Name__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Read</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

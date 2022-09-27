@@ -10,38 +10,43 @@ const DELAY = 350;
 export default class ReportFinderFilters extends LightningElement {
     
     /** Configure hide/show filters from UI */
+    // variables set from the parent component (reportFinderContainer) via the app builder
     @api showJobFunctionFilter;
     @api showPurposeFilter;
     @api showFormatFilter;
     @api showBookmarkFilter;
     @api showSearchByNameFilter;
 
-    valueJobFunction = [];
-    valueType = [];
-    valueCategory = [];
-    searchKey = null;
-    bookmarksOnly = false;
+    valueJobFunction = []; // shows actively selected optionsJob values in UI
+    valueType = []; // shows actively selected optionsType values in UI
+    valueCategory = []; // shows actively selected optionsCategory values in UI
+    searchKey = null; // filter in UI
+    bookmarksOnly = false; // filter in UI
 
-    optionsUser = [];
-    optionsType = [];
-    optionsCategory = [];
 
+    optionsJob = []; // filter in UI. displays active job filters set from getOptionsJob()
+    optionsType = []; // filter in UI.displays active type filters set from getOptionsType()
+    optionsCategory = []; // filter in UI.displays category type filters set from getOptionsCategory()
+
+    // object used to create filters
+    // eventually sent to controller 
     filters = {};
     
+    // retreives filter options when the component is loaded
     connectedCallback() {
-        this.getOptionsUser();
+        this.getOptionsJob();
         this.getOptionsType();
         this.getOptionsCategory();
-        console.log('this.showJobFunctionFilter --> ' + this.showJobFunctionFilter);
     }
 
+    // retrives active Category filters from Report_Finder_Category__c
     getOptionsCategory() {
         console.log('getCategories');
         let options = [];
         getCategories()
             .then((result) => {
             if (result) {
-                console.log('getCategories result' + JSON.stringify(result));
+                // console.log('getCategories result' + JSON.stringify(result));
                 result.forEach(r => {
                 options.push({
                     label: r,
@@ -49,24 +54,25 @@ export default class ReportFinderFilters extends LightningElement {
                 });
                 });
             }
-            console.log('getCategories options' + JSON.stringify(options));
+            // console.log('getCategories options' + JSON.stringify(options));
             this.optionsCategory =  options;
 
             })
             .catch((error) => {
             // handle Error
-            console.log('error');
+            console.log('error getOptionsCategory --> ' + JSON.stringify(error));
             });
     }
 
 
+    // retrives active type filters from active picklist values in Report_Finder_Item__c.Type__c
     getOptionsType() {
         console.log('getOptionsType');
         let options = [];
         getReportTypes()
             .then((result) => {
             if (result) {
-                console.log('getOptionsType result' + JSON.stringify(result));
+                // console.log('getOptionsType result' + JSON.stringify(result));
                 result.forEach(r => {
                 options.push({
                     label: r,
@@ -74,26 +80,26 @@ export default class ReportFinderFilters extends LightningElement {
                 });
                 });
             }
-            console.log('getOptionsType options' + JSON.stringify(options));
+            // console.log('getOptionsType options' + JSON.stringify(options));
             this.optionsType =  options;
 
             })
             .catch((error) => {
             // handle Error
-            console.log('error');
+            console.log('error getOptionsType --> ' + JSON.stringify(error));
             });
     }
 
 
     
-
-    getOptionsUser() {
+    // retrives active Job Function filters from Report_Finder_Job_Function__c
+    getOptionsJob() {
         console.log('getJobFunctions');
         let options = [];
         getJobFunctions()
             .then((result) => {
             if (result) {
-                console.log('result ' + JSON.stringify(result));
+                // console.log('result ' + JSON.stringify(result));
                 result.forEach(r => {
                 options.push({
                     label: r,
@@ -101,63 +107,56 @@ export default class ReportFinderFilters extends LightningElement {
                 });
                 });
             }
-            console.log('options' + JSON.stringify(options));
-            this.optionsUser =  options;
+            // console.log('options' + JSON.stringify(options));
+            this.optionsJob =  options;
 
             })
             .catch((error) => {
             // handle Error
-            console.log('error');
+            console.log('error getOptionsJob --> ' + JSON.stringify(error));
             });
     }
 
 
-    // get optionsType() {
-    //     return [
-    //         { label: 'Salesforce Report', value: 'salesforce report' },
-    //         { label: 'Tableau Dashboard', value: 'tableau dashboard' },
-    //     ];
-    // }
-
-    // get optionsCategory() {
-    //     return [
-    //         { label: 'Mass Contact', value: 'mass contact' },
-    //         { label: 'Prospecting', value: 'prospecting' },
-    //     ];
-    // }
-
+    // updates the job function variable, rebuilds filters, and fires event to requery records
     handleChangeJobFunction(e) {
-        console.log('handleChangeJobFunction');
         this.valueJobFunction = e.detail.value;
         this.buildFilters();
         this.fireFilterChangeEvent();        
     }
+
+    // updates the type variable, rebuilds filters, and fires event to requery records
     handleChangeType(e) {
         this.valueType = e.detail.value;
         this.buildFilters();
         this.fireFilterChangeEvent();  
     }
+
+    // updates the category variable, rebuilds filters, and fires event to requery records
     handleChangeCategory(e) {
         this.valueCategory = e.detail.value;
         this.buildFilters();
         this.fireFilterChangeEvent();  
     }
 
+
+    // updates the searchKey variable, rebuilds filters, and fires event to requery records
     handleSearchKeyChange(e) {
         this.searchKey = e.detail.value;
         this.buildFilters();
         this.delayedFireFilterChangeEvent();
-        
     }
 
+
+    // updates the bookmark variable, rebuilds filters, and fires event to requery records
     handleChangeBookmark(e){
         this.bookmarksOnly = e.target.checked;
-        console.log('this.bookmarksOnly --> ' + this.bookmarksOnly);
         this.buildFilters();
         this.fireFilterChangeEvent();        
 
     }
 
+    // sets customer filter object values based on user input from UI
     buildFilters(){
         console.log('buildFilters');
         this.filters.searchKey = this.searchKey;
@@ -165,37 +164,35 @@ export default class ReportFinderFilters extends LightningElement {
         this.filters.bookmarksOnly = this.bookmarksOnly;
         this.filters.type = this.valueType;
         this.filters.categories = this.valueCategory;
-       // this.filters.userRoles = this.valueJobFunction;
-        console.log('this.filters --> ' + JSON.stringify(this.filters));
+        // console.log('this.filters --> ' + JSON.stringify(this.filters));
     }
 
+
+    // sends event to parent (reportFinderContainer) to requery records with filters
     fireFilterChangeEvent(){
         console.log('fireFilterChangeEvent');
-
         const filteredEvent = new CustomEvent('filtered', { detail: this.filters });
         this.dispatchEvent(filteredEvent);
     }
 
 
-
+    // delays then sends event to parent (reportFinderContainer) to requery records with filters
+    // Debouncing this method: Do not actually fire the event as long as this function is
+    // being called within a delay of DELAY. This is to avoid a very large number of Apex
+    // method calls in components listening to this event.
     delayedFireFilterChangeEvent() {
-        // Debouncing this method: Do not actually fire the event as long as this function is
-        // being called within a delay of DELAY. This is to avoid a very large number of Apex
-        // method calls in components listening to this event.
-        console.log('delayedFireFilterChangeEvent');
-        console.log('this.filters... ', this.filters);
+        // console.log('delayedFireFilterChangeEvent');
+        // console.log('this.filters... ', this.filters);
         window.clearTimeout(this.delayTimeout);
         // eslint-disable-next-line @lwc/lwc/no-async-operation
         this.delayTimeout = setTimeout(() => {
-
             this.fireFilterChangeEvent();
-
-
         }, DELAY);
-        console.log('done');
+        // console.log('done');
     }
 
 
+    // resets all filters and sends event to parent (reportFinderContainer) to requery records with no filters
     clearFilters(){
         this.filters = {};
         this.valueJobFunction = [];
@@ -204,7 +201,6 @@ export default class ReportFinderFilters extends LightningElement {
         this.searchKey = '';
         this.bookmarksOnly = false;
         this.fireFilterChangeEvent();        
-
     }
 
 

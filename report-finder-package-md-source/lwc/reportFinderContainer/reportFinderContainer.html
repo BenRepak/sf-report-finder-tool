@@ -1,0 +1,26 @@
+<template>
+    <div class="slds-grid slds-gutters slds-wrap">
+        <!-- stack on small device -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12 slds-m-bottom_medium">
+            <c-report-finder-filters onfiltered={filteredEvent} show-job-function-filter={showJobFunctionFilter}
+                show-purpose-filter={showPurposeFilter} show-format-filter={showFormatFilter}
+                show-bookmark-filter={showBookmarkFilter} show-search-by-name-filter={showSearchByNameFilter}>
+            </c-report-finder-filters>
+        </div>
+        <!-- stack on small device -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_9-of-12 slds-large-size_9-of-12">
+            <c-report-finder-list reports={reports} onreportselected={selectedEvent} onprevious={handlePreviousPage}
+                onnext={handleNextPage} message={noReportsMessage}></c-report-finder-list>
+        </div>
+        <!-- modal is hidden by default and activiated in reportFinderListeItem -->
+        <div>
+            <c-report-finder-selected-item-modal report={selectedReport} onchangebookmark={handleBookmarkChange}
+                onopenreport={handleReportOpen}>
+            </c-report-finder-selected-item-modal>
+        </div>
+        <!-- show spinner when query is being executed -->
+        <div if:false={isLoaded}>
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </div>
+    </div>
+</template>

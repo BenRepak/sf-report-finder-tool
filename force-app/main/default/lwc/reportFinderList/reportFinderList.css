@@ -2,7 +2,6 @@
     background: rgb(243, 242, 242);
 }
 
-
 .content {
     display: flex;
     flex-wrap: wrap;
@@ -12,11 +11,6 @@ c-report-finder-list-item {
     min-width: 250px;
     flex: 1;
 } 
-
-/* c-paginator {
-    display: block;
-} */
-
 
 .logo {
     text-align: center;

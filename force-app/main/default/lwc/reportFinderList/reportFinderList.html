@@ -19,6 +19,7 @@
             ></c-report-finder-paginator>
 
             </template>
+            <!-- display U logo and message if no reports return -->
             <template if:false={reports.records.length}>
                 <div class="slds-var-p-around_large logo">
                     <img src={logoUrl} class="logo" alt="Block U Logo" />
@@ -28,7 +29,6 @@
         </template>
         <template if:true={error}>
             <p>Errors: </p>{error}
-            <!-- <c-error-panel errors={reports.error}></c-error-panel> -->
         </template>
     </div>
 </template>

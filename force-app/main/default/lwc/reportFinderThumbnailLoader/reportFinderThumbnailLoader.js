@@ -1,6 +1,5 @@
 import { LightningElement,api,wire } from 'lwc';
 import updateThumbnail from '@salesforce/apex/ReportThumbnailController.updateThumbnail';
-import updateThumbnail2 from '@salesforce/apex/ReportThumbnailController.updateThumbnail2';
 
 import getReport from '@salesforce/apex/ReportThumbnailController.getReport'; 
 
@@ -41,24 +40,6 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
             
     }
 
-    
-    // @wire(getReport, { recordId : '$recordId' })
-    // wiredReport({ data, error }) {
-    //     if (data) {
-    //         console.log('data');
-    //         console.log(data);
-    //         this.report = data;
-    //         this.error = undefined;
-    //         console.log('this.report.thumbnail --> ' + this.report.thumbnail);
-    //     } else if (error) {
-    //         console.log('error');
-    //         console.log(error);
-    //         this.error = error;
-    //         this.report = undefined;
-    //     }
-    // }
-
-
     handleUploadFinished(event) {
         // Get the list of uploaded files
         this.report = undefined;
@@ -72,8 +53,7 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
         console.log('contentVersionId --> ' + contentVersionId);
         console.log('contentDocumentId --> ' + contentDocumentId);
 
-        // updateThumbnail({contentVersionId : contentVersionId, recordId : this.recordId})
-        updateThumbnail2({contentVersionId : contentVersionId, contentDocumentId : contentDocumentId,recordId : this.recordId})
+        updateThumbnail({contentVersionId : contentVersionId, contentDocumentId : contentDocumentId,recordId : this.recordId})
 
         .then((result) => {
             console.log('success');

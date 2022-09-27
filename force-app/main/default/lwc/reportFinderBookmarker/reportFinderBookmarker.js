@@ -1,7 +1,7 @@
 import { LightningElement, api } from 'lwc';
 
 export default class ReportFinderBookmarker extends LightningElement {
-   
+    // variable passed from the parent component
     @api
     report;
 
@@ -23,7 +23,6 @@ export default class ReportFinderBookmarker extends LightningElement {
         this.dispatchEvent(updatedBookmarkEvent);
 
     }
-
 
     // dynamically sets icon text based on value of report.isBookmarked
     get iconAltText(){

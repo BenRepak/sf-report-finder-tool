@@ -53,7 +53,7 @@ public with sharing class ReportFinderController {
     * @param pageNumber page number from the paginator lwc, which applies an offset to the query
     * @return a custom instance of PageResult for use in the lwc
     */
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled
     public static PagedResult refreshReports(ReportFinderFilter filters, Integer pageNumber) {
         return getReports(filters, pageNumber);
     }

@@ -1,20 +1,28 @@
 .slds-card {
-    background: #F3F2F2;
+    background: #E2E6E6;
+
 }
 
-.content {
+/* .content {
     display: flex;
     flex-wrap: wrap;
 }
 
 c-report-finder-list-item {
+    min-width: 100px;
+}  */
+
+.report-item{
     min-width: 250px;
-    flex: 1;
-} 
+}
 
 .logo {
     text-align: center;
     color: #cc0000;
+}
+
+.page-footer{
+    font-weight: normal;
 }
 
 img.logo {

@@ -21,6 +21,15 @@
             </lightning-accordion-section>
             <!-- BEGIN hide filters on small device -->
             <div class="slds-show_small">
+                  <!-- report purpose filters -->
+                  <template if:true={showPurposeFilter}>
+                    <template if:true={optionsCategory.length}>
+                        <lightning-accordion-section name="report_purpose_filters" label="Purpose">
+                            <lightning-checkbox-group name="Checkbox Group" options={optionsCategory}
+                                value={valueCategory} onchange={handleChangeCategory}></lightning-checkbox-group>
+                        </lightning-accordion-section>
+                    </template>
+                </template>
                 <!-- job function filters -->
                 <template if:true={showJobFunctionFilter}>
                     <template if:true={optionsJob.length}>
@@ -31,15 +40,7 @@
                     </template>
                 </template>
 
-                <!-- report purpose filters -->
-                <template if:true={showPurposeFilter}>
-                    <template if:true={optionsCategory.length}>
-                        <lightning-accordion-section name="report_purpose_filters" label="Purpose">
-                            <lightning-checkbox-group name="Checkbox Group" options={optionsCategory}
-                                value={valueCategory} onchange={handleChangeCategory}></lightning-checkbox-group>
-                        </lightning-accordion-section>
-                    </template>
-                </template>
+              
 
                 <!-- report type filters -->
                 <template if:true={showFormatFilter}>

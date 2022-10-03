@@ -2,10 +2,9 @@
     <div class="slds-card slds-var-p-around_x-small">
         <p class="slds-text-heading_medium">Report Finder Filters</p>
         <!-- according start -->
-        <lightning-accordion class="example-accordion" allow-multiple-sections-open
-            active-section-name="popular_report_filters">
+        <lightning-accordion class="example-accordion" allow-multiple-sections-open>
             <!-- popular filters -->
-            <lightning-accordion-section name="popular_report_filters" label="Popular Report Filters">
+            <!-- <lightning-accordion-section name="popular_report_filters" label="Popular Report Filters"> -->
                 <template if:true={showSearchByNameFilter}>
 
                     <lightning-input type="search" placeholder="search name or description"
@@ -18,7 +17,7 @@
                             checked={bookmarksOnly}></lightning-input>
                     </div>
                 </template>
-            </lightning-accordion-section>
+            <!-- </lightning-accordion-section> -->
             <!-- BEGIN hide filters on small device -->
             <div class="slds-show_small">
                   <!-- report purpose filters -->

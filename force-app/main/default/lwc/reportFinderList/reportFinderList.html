@@ -4,19 +4,22 @@
         <template if:true={reports}>
             <template if:true={reports.records.length}>
                 <div class="content ">
+                    <div class="slds-grid slds-gutters slds-grid_align-center slds-wrap ">
                         <template for:each={reports.records} for:item="report">
-                            <c-report-finder-list-item key={report.id} report={report}
-                                onreportselected={handleReportSelected} class="slds-var-m-around_x-small">
-                            </c-report-finder-list-item>
+                            <div key={report.id} class="report-item slds-col slds-size_1-of-1 slds-small-size_1-of-2 slds-large-size_3-of-12">
+                                <c-report-finder-list-item report={report} onreportselected={handleReportSelected}
+                                    class="slds-var-m-around_x-small">
+                                </c-report-finder-list-item>
+                            </div>
                         </template>
+                    </div>
                 </div>
-                <c-report-finder-paginator
-                page-number={reports.pageNumber}
-                page-size={reports.pageSize}
-                total-item-count={reports.totalItemCount}
-                onprevious={handlePreviousPage}
-                onnext={handleNextPage}
-            ></c-report-finder-paginator>
+                <div class="page-footer">
+                    
+                    <c-report-finder-paginator page-number={reports.pageNumber} page-size={reports.pageSize}
+                        total-item-count={reports.totalItemCount} onprevious={handlePreviousPage}
+                        onnext={handleNextPage}></c-report-finder-paginator>
+                </div>
 
             </template>
             <!-- display U logo and message if no reports return -->

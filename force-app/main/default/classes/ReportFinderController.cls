@@ -40,7 +40,7 @@ public with sharing class ReportFinderController {
             this.name = item.Item_Name__c;
             this.thumbnail = item.Thumbnail_URL__c;
             this.longDescription = item.Long_Description__c;
-            this.shortDescription = item.Short_Description__c + ' Click to learn more.';
+            this.shortDescription = item.Short_Description__c;
             this.type = item.Type__c;
             this.isBookmarked = (item.Report_Finder_User_Bookmarks__r.size() > 0)? true : false; // identified if bookmarked for the running user
             this.accessUrl = item.Access_URL__c;

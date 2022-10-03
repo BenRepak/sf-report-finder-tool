@@ -1,6 +1,8 @@
 .content {
     padding: 8px;
-    background-color: #ffffff;
+    background-color: #E2E6E6;
+    border-style: solid;
+    border-width: thin;
     border-radius: 0.25rem;
     height: 275px;
     text-align: center;

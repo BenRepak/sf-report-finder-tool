@@ -135,7 +135,6 @@ public with sharing class ReportFinderController {
         ',(SELECT Id, Name FROM Report_Finder_User_Bookmarks__r WHERE Bookmarked_By__c = : currentUser) ' + 
         ' FROM Report_Finder_Item__c ' +
         whereClause + 
-        ' WITH SECURITY_ENFORCED' +
         ' ORDER BY Item_Name__c LIMIT :pageSize OFFSET :offset';
 
         // identify total number of returned resulsts 

@@ -46,7 +46,7 @@ public with sharing class ReportThumbnailController {
         ContentVersion cv = [SELECT Id, VersionData, Field_Image_URL__c FROM ContentVersion WHERE Id =: contentVersionId];
 
         // encode photo data 
-        versionData = System.EncodingUtil.base64Encode(cv.versionData);
+        // versionData = System.EncodingUtil.base64Encode(cv.versionData);
 
         // get relative URL to avoid CORS issues 
         String urlSubstring = cv.Field_Image_URL__c.substringAfter('.com');
@@ -55,7 +55,7 @@ public with sharing class ReportThumbnailController {
         rfi.Id = recordId;
         rfi.Thumbnail_URL__c = urlSubstring;
         // rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/download/' + contentVersionId;
-        return versionData;
+        return urlSubstring;
       } catch(DMLException e) {
         system.debug('error');
         System.debug(e.getMessage());

@@ -55,6 +55,7 @@ public with sharing class ReportThumbnailController {
         rfi.Id = recordId;
         rfi.Thumbnail_URL__c = urlSubstring;
         // rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/download/' + contentVersionId;
+        update rfi;
         return urlSubstring;
       } catch(DMLException e) {
         system.debug('error');

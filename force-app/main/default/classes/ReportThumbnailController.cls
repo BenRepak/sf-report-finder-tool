@@ -32,23 +32,31 @@ public with sharing class ReportThumbnailController {
     * @param contentVersionId contentVersionId from the newly uploaded file
     * @param contentDocumentId contentDocumentId from the newly uploaded file
     * @param reportId Id of Report_Finder_Item__c to associate with the file upload
-    * @return a string containing the access URl from the RFI record
+    * @return a string containing the url encoded blow data of the uploaded picture
     */
     @AuraEnabled
     public static String updateThumbnail(String contentVersionId, String contentDocumentId, String recordId) {
+      String versionData;
       // return null if any of the inputs are null
       if (contentVersionId == null || recordId == null || contentDocumentId == null) { return null; }
        
       try {
+
+        // get content version body and access url
+        ContentVersion cv = [SELECT Id, VersionData, Field_Image_URL__c FROM ContentVersion WHERE Id =: contentVersionId];
+
+        // encode photo data 
+        // versionData = System.EncodingUtil.base64Encode(cv.versionData);
+
+        // get relative URL to avoid CORS issues 
+        String urlSubstring = cv.Field_Image_URL__c.substringAfter('.com');
+
         Report_Finder_Item__c rfi = new Report_Finder_Item__c();
         rfi.Id = recordId;
-        // rfi.Thumbnail_Url__c = System.URL.getSalesforceBaseUrl().toExternalForm()+'/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' 
-        // +  contentVersionId
-        // + '&operationContext=CHATTER&contentId='
-        // + contentDocumentId;
-        rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/download/' + contentVersionId;
+        rfi.Thumbnail_URL__c = urlSubstring;
+        // rfi.Thumbnail_Url__c = '/sfc/servlet.shepherd/version/download/' + contentVersionId;
         update rfi;
-        return rfi.Thumbnail_Url__c;
+        return urlSubstring;
       } catch(DMLException e) {
         system.debug('error');
         System.debug(e.getMessage());

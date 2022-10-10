@@ -39,3 +39,13 @@
 .help-icon{
     margin: 0 0 0 90%;
 }
+
+
+.two-line-truncate {
+    padding: 2px;
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }

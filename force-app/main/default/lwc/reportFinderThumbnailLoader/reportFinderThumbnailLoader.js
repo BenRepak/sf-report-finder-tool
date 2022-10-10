@@ -16,9 +16,6 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
     @api
     error;
 
-    // thumbnail = {};
-
-
     // acceptable upload formats for thumbnails
     get acceptedFormats() {
         return ['.jpeg','.jpg','.png'];
@@ -42,7 +39,7 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
             })
             .catch((error) => {
                 console.log('error');
-                console.log(error);
+                // console.log(error);
                 this.error = error;
                 this.report = undefined;
             });
@@ -67,12 +64,14 @@ export default class ReportFinderThumbnailLoader extends LightningElement {
             // refresh report data after successful update to update the thumbnail
             console.log('success');
             // console.log(result);
+            // console.log(JSON.stringify(result));
+
             this.refreshThumbnail();
         })
         .catch((error) => {
             console.log('error');
-            console.log(JSON.stringify(error));
-            console.log((error));
+            // console.log(JSON.stringify(error));
+            // console.log((error));
         });
     }
 
